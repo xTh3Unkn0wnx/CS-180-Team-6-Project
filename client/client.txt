@@ -1,1 +1,0 @@
-This is the directory where we will write our code for the client side of the application
