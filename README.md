@@ -1,17 +1,21 @@
 # CS-180-Team-6-Project
 Andrew Ocegueda
 
-Member 2
+Mohamed Abuelreich
 
-Member 3
+Daniel Villicana
 
-Member 4
+Ocean Chen
 
-Member 5
+Akshay Jayaram
 
 This repository will host Team's 6 code for our upcoming project for CS 180
 
-## Instruction to download Dependencies
+# Live Active
+
+A web application that will help its user to make excercise and physical fitness more easier for those who are inexperineced or experienced users to make their current routines more efficient. 
+
+## Instructions to download Dependencies
 
 ### Prerequisites
 Install NodeJS to download the neccessary dependencies for the program
