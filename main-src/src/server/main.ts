@@ -22,7 +22,7 @@ if(URI) {
       console.log("MongoDB database connection established successfully")
     })
 } else {
-  process.exit(1);
+  console.log("Could not connect to MongoDB");
 }
 
 app.use('/exercises', router);
