@@ -2,9 +2,11 @@ import axios from "axios";
 import express, { Response, Request } from "express";
 import ViteExpress from "vite-express";
 import mongoose, { ConnectOptions } from "mongoose";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import cors from 'cors';
-import router from './routes/exercise.js'
+import exerciseRouter from './routes/exercise.js';
+import mealRouter from './routes/meal.js';
+import userRouter from './routes/user.js';
 
 dotenv.config();
 
@@ -24,7 +26,9 @@ if(URI) {
   console.log("Could not connect to MongoDB");
 }
 
-app.use('/exercises', router);
+app.use('/exercises', exerciseRouter);
+app.use('/meals', mealRouter);
+app.use('/users', userRouter);
 
 app.get("/api/hello", (_, res:Response) => {
   res.send("This is my first message!");
