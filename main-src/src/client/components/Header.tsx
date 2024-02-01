@@ -1,7 +1,17 @@
-import React from "react"
+import React, { FC } from "react"
 
-export const Header = () => {
+interface Props {
+  title: string;
+}
+
+export const Header:FC<Props> = ({title}) => {
   return (
-    <div>Header</div>
+    <>
+      <h1>{title}</h1>
+    </>
   )
+}
+
+Header.defaultProps = {
+  title: "Live Active"
 }
