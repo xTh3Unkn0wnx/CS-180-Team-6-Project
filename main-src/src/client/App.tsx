@@ -34,9 +34,9 @@ function App() {
     }
   };
 
-    const handleLogin = async () => {
+  const signUpButton = () => {
 
-    }
+  }
 
   return (
     <div className="container">
@@ -72,11 +72,11 @@ function App() {
 
     <div className="bottom-container">
       <div className="row">
-        <div className="col">
-          <a href="#" id="signup" className="signup">Sign up</a>
+        <div className="signUp">
+          <a href="" id="signup" className="signup">Sign up</a>
         </div>
 
-        <div className="col">
+        <div className="forgotPassword">
         <a href="#" id="forgotpass" className="forgotpass">Forgot password?</a>
         </div>
       </div>
