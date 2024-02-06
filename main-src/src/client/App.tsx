@@ -1,8 +1,10 @@
   import "./App.css";
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Footer } from "./components/Footer";
+import { NotFoundPage } from "./components/NotFound";
 import { useState } from "react";
 import axios from "axios";
 import ICON from "./assets/icon.png"
@@ -37,52 +39,6 @@ function App() {
   const signUpButton = () => {
 
   }
-
-  return (
-    <div className="container">
-      <h1> Live Active </h1>  
-        <img src="src/client/assets/liveActive.jpg" width="200" height="200"/>
-        <form> 
-        <div>
-          <h2> Already have an account? Login below! </h2>
-            <div className="userNameLogin">
-            <label> 
-              Username: 
-              <input type="text" name="usernameLogin" id="usernameLogin" placeholder="Username" />
-            </label>
-            </div>
-          <br/>   
-            <div className="passwordLogin"> 
-            <label>
-              Password: 
-              <input type="text" name = "passwordlogin" id="passwordLogin" placeholder="Password" />
-            </label>
-            </div>
-        </div>
-        </form>
-      <br /> 
-      <div>
-      </div>
-      <button onClick={loginButton}>
-        Login
-      </button>
-    
-    <br/>
-    <br/> 
-
-    <div className="bottom-container">
-      <div className="row">
-        <div className="signUp">
-          <a href="" id="signup" className="signup">Sign up</a>
-        </div>
-
-        <div className="forgotPassword">
-        <a href="#" id="forgotpass" className="forgotpass">Forgot password?</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  );
 }
 
 export default App;
