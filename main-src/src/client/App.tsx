@@ -7,23 +7,15 @@ import { Footer } from "./components/Footer";
 import { NotFoundPage } from "./components/NotFound";
 import { useState } from "react";
 import axios from "axios";
-import ICON from "./assets/icon.png"
 
-import reactLogo from "./assets/react.svg";
 import { stringify } from "querystring";
 import { addSyntheticLeadingComment } from "typescript";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState("");
-  const [data, setData] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState("");
-
-  axios.get('/api/hello')
-  .then((response) => setMessage(response.data));
 
   const loginButton = async () => {
     var email = (document.getElementById("usernameLogin") as HTMLInputElement). value; 
@@ -35,6 +27,7 @@ function App() {
       if(response.data.loggedIn){
         setIsLoggedIn(true);
         setUserId(response.data.userId);
+        sessionStorage.setItem("userId", response.data.userId);
         window.location.assign("homeScreen.tsx");
       } else {
         alert("Invalid credentials");
@@ -43,12 +36,6 @@ function App() {
     .catch((error) => {
       console.error(error);
     })
-    // if(email=="ochen011@ucr.edu" && password=="test123"){
-    //   window.location.assign("homeScreen.tsx");
-    //   alert("Successful Login");
-    // }else{
-    //   alert("Wrong Username or Password. Try again!")
-    // }
   };
 
   const signUpButton = () => {
