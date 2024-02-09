@@ -20,20 +20,35 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState("");
 
   axios.get('/api/hello')
   .then((response) => setMessage(response.data));
 
   const loginButton = async () => {
     var email = (document.getElementById("usernameLogin") as HTMLInputElement). value; 
-    var password = (document.getElementById("passwordLogin") as HTMLInputElement).value; 
-
-    if(email=="ochen011@ucr.edu" && password=="test123"){
-      window.location.assign("homeScreen.tsx");
-      alert("Successful Login");
-    }else{
-      alert("Wrong Username or Password. Try again!")
-    }
+    var password = (document.getElementById("passwordLogin") as HTMLInputElement).value;
+    
+    axios.post('/users/login', {email, password})
+    .then((response) => {
+      console.log(response.data);
+      if(response.data.loggedIn){
+        setIsLoggedIn(true);
+        setUserId(response.data.userId);
+        window.location.assign("homeScreen.tsx");
+      } else {
+        alert("Invalid credentials");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+    // if(email=="ochen011@ucr.edu" && password=="test123"){
+    //   window.location.assign("homeScreen.tsx");
+    //   alert("Successful Login");
+    // }else{
+    //   alert("Wrong Username or Password. Try again!")
+    // }
   };
 
   const signUpButton = () => {
