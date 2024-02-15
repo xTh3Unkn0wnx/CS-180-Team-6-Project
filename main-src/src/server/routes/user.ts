@@ -35,8 +35,11 @@ router.route('/register').post((req:Request, res:Response) => {
 // Login a user
 router.route('/login').post((req: Request, res: Response) => {
     // const username = req.body.username;
-    const password = req.body.password;
-    const email = req.body.email;
+    const {email, password} = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ error: "Email and password required" });
+    }
 
     // if (!username && !email) {
     //     return res.status(400).json({ error: "Username or email required" });
@@ -64,7 +67,7 @@ router.route('/login').post((req: Request, res: Response) => {
         User.findOne({ email: email })
     .then(user => {
         if (!user) {
-            return res.status(400).json({ error: "User not found" });
+            return res.status(400).json({ msg: "User not found" });
         }
 
         // Check password

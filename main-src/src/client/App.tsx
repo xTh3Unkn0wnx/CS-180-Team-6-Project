@@ -10,6 +10,7 @@ import axios from "axios";
 
 import { stringify } from "querystring";
 import { addSyntheticLeadingComment } from "typescript";
+import e from "express";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -30,11 +31,20 @@ function App() {
         sessionStorage.setItem("userId", response.data.userId);
         window.location.assign("homeScreen.tsx");
       } else {
+        alert(response.data.msg);
         alert("Invalid credentials");
       }
     })
     .catch((error) => {
-      console.error(error);
+      if (error.response) {
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        console.log(error.request);
+      } else {
+        console.log('Error', error.message);
+      }
     })
   };
 
