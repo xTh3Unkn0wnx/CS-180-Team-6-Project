@@ -13,7 +13,7 @@ import { stringify } from "querystring";
 import { addSyntheticLeadingComment } from "typescript";
 import { sign } from "crypto";
 
-function signUpScreen() {
+function Signup() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState("");
   const [data, setData] = useState("");
@@ -35,6 +35,6 @@ function signUpScreen() {
   );
 }
 
-export default signUpScreen; 
+export default Signup; 
 
 

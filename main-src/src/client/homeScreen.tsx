@@ -12,12 +12,13 @@ import ICON from "./assets/icon.png"
 import reactLogo from "./assets/react.svg";
 import { stringify } from "querystring";
 import { addSyntheticLeadingComment } from "typescript";
+import Logo from "./assets/liveActive.jpg"
+import NavBar from "./navBar";
 
 const Home = () => {
     return (
-        <div className="homeScreenCont">
-            <img src="src/client/assets/liveActive.jpg" width="200" height="200"/>
-        </div>
+        <NavBar>
+        </NavBar>
     ); 
 }
 
