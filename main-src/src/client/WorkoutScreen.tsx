@@ -26,7 +26,7 @@ function App() {
 
 
   let workouts: string[] = ['Dumbbell Fly', 'Dumbbell Curl', 'Shoulder Press'];
-  let workouts_reps: string[] = ['3', '4', '4'];
+  let workouts_sets: string[] = ['3', '4', '4'];
 
   const AddWorkout = async () => {
     var workout = (document.getElementById("Workout") as HTMLInputElement). value; 
@@ -34,10 +34,45 @@ function App() {
 
     if(workout.length != 0 && sets != '0' && sets.length != 0){
       alert("Successfully Added " + workout);
+        workouts.push(workout)
+        workouts_sets.push(sets)
+        
     }else{
       alert("Please enter a valid workout.")
     }
   };
+  
+  
+  //To test if AddWorkout function works properly
+  const AlertWorkouts = async () => 
+    {
+        for (let i = 0; i < workouts.length; i++) 
+        {
+            alert(workouts[i] + " x" + workouts_sets[i]);
+        }
+    };
+
+  const RemoveWorkout = async () => {
+    var workout2 = (document.getElementById("Workout") as HTMLInputElement). value; 
+    let isPresent:boolean = false;
+    
+      for(let j = 0; j < workouts.length; j++)
+      {
+        if(workout2 == workouts[j])
+        {   
+          alert("Successfully Removed " + workout2);
+          workouts.splice(j,1);
+          workouts_sets.splice(j,1);
+          isPresent = true;
+        }
+      }
+
+      if(!isPresent)
+      {
+        alert("This workout does not exist in your plan.")
+      }
+    
+    };
 
   const signUpButton = () => {
 
@@ -70,6 +105,14 @@ function App() {
   </div>
       <button onClick={AddWorkout}>
           Add Workout
+      </button>  
+
+      <button onClick={AlertWorkouts}>
+          Alert All Workouts
+      </button>  
+
+      <button onClick={RemoveWorkout}>
+          Remove Workout
       </button>  
     
     <br/>
