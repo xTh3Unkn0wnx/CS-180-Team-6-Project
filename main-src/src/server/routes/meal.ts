@@ -14,18 +14,20 @@ router.route('/').get((req:Request, res:Response) => {
 })
 
 router.route('/add').post((req:Request, res:Response) => {
-    const mealName = req.body.mealName;
-    const description = req.body.description;
-    const calories = Number(req.body.calories);
-    const date = Date.parse(req.body.date);
-    const user = req.query.user;
-    const type = req.body.type;
-    if (!user){
-        res.status(400).json('Error: userId is required');
+    // const mealName = req.body.mealName;
+    // const description = req.body.description;
+    // const calories = Number(req.body.calories);
+    // const date = Date.parse(req.body.date);
+    // const user = req.query.user;
+    // const type = req.body.type;
+    const {userId, mealName, description, calories, type} = req.body;
+    let date = Date.now();
+    if (!userId || userId === ""){
+        return res.status(400).json('Error: userId is required');
     }
 
     const newMeal = new Meal({
-        user,
+        userId,
         mealName,
         description,
         calories,
