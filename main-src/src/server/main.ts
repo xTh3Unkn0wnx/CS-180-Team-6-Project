@@ -30,21 +30,6 @@ app.use('/exercises', exerciseRouter);
 app.use('/meals', mealRouter);
 app.use('/users', userRouter);
 
-app.get("/api/hello", (_, res:Response) => {
-  res.send("This is my first message!");
-});
-
-app.get('/api/data',async (req:Request, res:Response) =>  {
-  try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1/');
-    const data = response.data;
-    res.json(data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({error: 'Internal Server Error'});
-  }
-})
-
 ViteExpress.listen(app, 3000, () =>
   console.log("Server is listening on port 3000..."),
 );
