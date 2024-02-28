@@ -40,6 +40,7 @@ router.route('/login').post((req: Request, res: Response) => {
     if (!email || !password) {
         return res.status(400).json({ error: "Email and password required" });
     }
+<<<<<<< HEAD
 
     // if (!username && !email) {
     //     return res.status(400).json({ error: "Username or email required" });
@@ -64,6 +65,8 @@ router.route('/login').post((req: Request, res: Response) => {
     // }
     // Find user by email
     //else{
+=======
+>>>>>>> 65c113249b289cabd237cb033d121d501d7f8da5
         User.findOne({ email: email })
     .then(user => {
         if (!user) {
