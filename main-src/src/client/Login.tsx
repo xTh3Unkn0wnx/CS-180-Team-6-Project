@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";  
 import axios from "axios";
 import { useState } from "react";
+import "./Login.css"
 
 
 export const Login = () => { 
@@ -48,60 +49,37 @@ export const Login = () => {
   };
 
     return (
-<>
-      <h1> Live Active </h1>
-      <img src="src/client/assets/liveActive.jpg" width="200" height="200" />
-      <form>
-        <div>
-          <h2> Already have an account? Login below! </h2>
-          <div className="userNameLogin">
-            <label>
-              Username:
-              <input
-                type="text"
-                name="usernameLogin"
-                id="usernameLogin"
-                placeholder="Username"
-              />
-            </label>
-          </div>
-          <br />
-          <div className="passwordLogin">
-            <label>
-              Password:
-              <input
-                type="text"
-                name="passwordlogin"
-                id="passwordLogin"
-                placeholder="Password"
-              />
-            </label>
+    <body>
+        <section> 
+      <div className="container">
+        <div className="header">
+          <div className="text"> Login </div>
+        </div>
+          <div className="loginInputs">
+            <div className="input"> 
+              <input type="text" name="usernameLogin" id="usernameLogin" placeholder="Username" required/>
+            </div>
+
+            <div className="loginInputs">
+              <input type="text" name="passwordLogin" id="passwordLogin" placeholder="Password" required/>
+            </div>
+
+            <div>
+              <a href="#"> Forgot Password </a>
+            </div>
+
+            <div> 
+              <p> Don't have an account? <a href="#"> Register</a> </p>
+            </div>
+
+            <div> 
+              <button type="button" onClick={handleLogin}> Login </button>
+            </div> 
           </div>
         </div>
-      </form>
-      <br />
-      <div></div>
-      <button onClick={handleLogin}>Login</button>
+      </section>
+    </body>
 
-      <br />
-      <br />
-
-      <div className="bottom-container">
-        <div className="row">
-          <div className="signUp">
-            <a href="/Signup" id="signup" className="signup">
-              Sign up
-            </a>
-          </div>
-
-          <div className="forgotPassword">
-            <a href="/Forgotpass" id="forgotpass" className="forgotpass">
-              Forgot password?
-            </a>
-          </div>
-        </div>
-      </div>
-    </>
     )
 }
 

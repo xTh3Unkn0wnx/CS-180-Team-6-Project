@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
-import { Footer } from "./components/Footer";
 import { NotFoundPage } from "./components/NotFound";
 import { useState } from "react";
 import axios from "axios";
@@ -19,6 +18,7 @@ const Home = () => {
     return (
         <NavBar>
         </NavBar>
+
     ); 
 }
 
