@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";  
 import axios from "axios";
 import { useState } from "react";
-import "./Login.css"
+import "./components/Login.css"
 
 
 export const Login = () => { 
@@ -48,39 +48,31 @@ export const Login = () => {
       });
   };
 
-    return (
-    <body>
-        <section> 
+  return (
       <div className="container">
-        <div className="header">
-          <div className="text"> Login </div>
-        </div>
-          <div className="loginInputs">
-            <div className="input"> 
-              <input type="text" name="usernameLogin" id="usernameLogin" placeholder="Username" required/>
+          <div className="header"> Live Active </div>
+          <div className="headerLogin"> Have an account? Login in below! </div>
+            <div className="inputBox"> 
+              <input type="text" className="input" id="usernameLogin" placeholder="Username" required/>
             </div>
 
-            <div className="loginInputs">
-              <input type="text" name="passwordLogin" id="passwordLogin" placeholder="Password" required/>
+            <div className="inputBox">
+              <input type="text" className="input" id="passwordLogin" placeholder="Password" required/>
             </div>
 
-            <div>
-              <a href="#"> Forgot Password </a>
+            <div className="forgotPass">
+              <a href="/forgotpass"> Forgot Password? </a>
             </div>
 
-            <div> 
-              <p> Don't have an account? <a href="#"> Register</a> </p>
+            <div className="register"> 
+              <p> Don't have an account? <a href="/signup"> Register</a> </p>
             </div>
 
-            <div> 
-              <button type="button" onClick={handleLogin}> Login </button>
+            <div className="buttonContainer"> 
+              <button type="button" className="loginButton" onClick={handleLogin}> Login </button>
             </div> 
-          </div>
         </div>
-      </section>
-    </body>
-
-    )
+  )
 }
 
 export default Login; 

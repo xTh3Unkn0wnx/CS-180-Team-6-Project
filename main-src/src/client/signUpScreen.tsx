@@ -1,16 +1,10 @@
-import "./App.css";
+import "./components/signUp.css";
 import React from "react";
-import { Header } from "./components/Header";
+import { Header } from "./Header";
 import { Main } from "./components/Main";
-import { NotFoundPage } from "./components/NotFound";
+import { NotFoundPage } from "./NotFound";
 import { useState } from "react";
-import axios from "axios";
-import ICON from "./assets/icon.png"
 
-import reactLogo from "./assets/react.svg";
-import { stringify } from "querystring";
-import { addSyntheticLeadingComment } from "typescript";
-import { sign } from "crypto";
 
 function Signup() {
   const [count, setCount] = useState(0);
@@ -28,9 +22,34 @@ function Signup() {
   };
 
   return (
-    <div className="signUpContainer"> 
-        
-    </div>
+      <div className="signUpContainer"> 
+        <div className="header"> Create Your Account </div>
+
+        <div className="inputBox"> 
+          <input type="text" className="input" id="username" placeholder="Username" required/>
+        </div>
+
+        <div className="inputBox">
+          <input type="text" className="input" id="email" placeholder="Email" required/>
+        </div>
+
+        <div className="inputBox">
+          <input type="text" className="input" id="" placeholder="Password" required/>
+        </div>
+
+        <div className="inputBox">
+          <input type="text" className="input" id="" placeholder="Confirm Password" required/>
+        </div>
+
+        <div className="goBack"> 
+          <p> Have an account? <a href="/"> Login </a></p>
+        </div>
+
+        <div className="buttonContainer"> 
+          <button type="button" className="submitButton"> Create Account </button>
+        </div> 
+
+      </div>
   );
 }
 
