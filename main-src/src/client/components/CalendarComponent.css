@@ -1,0 +1,3 @@
+.my-custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  visibility: hidden;
+}
