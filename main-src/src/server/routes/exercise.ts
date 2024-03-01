@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
-import {Exercise} from "../models/exercise.model.js"
+import {Exercise} from "../models/exercise.model.js";
+import mongoose from 'mongoose';
 
 const router = express.Router();
 
@@ -21,12 +22,13 @@ router.route('/add').post((req:Request, res:Response) => {
     const user = req.query.userId;
     const intensity = req.body.intensity;
     const muscleGroups = req.body.muscleGroups;
-    if (!user){
+    if (!user || typeof user !== "string" || user === ""){
         res.status(400).json('Error: userId is required');
+        return;
     }
 
     const newExercise = new Exercise({
-        user,
+        userid : new mongoose.Types.ObjectId(user),
         exerciseName,
         description,
         duration,

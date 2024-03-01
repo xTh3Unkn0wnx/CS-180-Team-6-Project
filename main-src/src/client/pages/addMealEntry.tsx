@@ -9,6 +9,7 @@ export const AddMealEntry = () => {
     mealName: "",
     description: "",
     calories: "",
+    date: "",
     type: "",
   });
 
@@ -20,6 +21,7 @@ export const AddMealEntry = () => {
   };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setUserId(sessionStorage.getItem("userId"));
     axios
       .post("/meals/add", {
         userId: userId,
@@ -27,9 +29,11 @@ export const AddMealEntry = () => {
       })
       .then((response) => {
         console.log(response);
+        alert("Meal Added!");
       })
       .catch((error) => {
         console.warn(error);
+        alert("Error: " + error.message);
       });
   };
 
@@ -65,6 +69,15 @@ export const AddMealEntry = () => {
             value={meal.calories}
             onChange={handleInputChange}
             required
+          />
+        </label>
+        <label>
+          Date:
+          <input
+            type="date"
+            name="date"
+            value={meal.date}
+            onChange={handleInputChange}
           />
         </label>
         <label>

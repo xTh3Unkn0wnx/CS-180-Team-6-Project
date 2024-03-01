@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import {Meal} from "../models/meal.model.js"
+import mongoose from 'mongoose';
 
 const router = express.Router();
 
@@ -20,14 +21,16 @@ router.route('/add').post((req:Request, res:Response) => {
     // const date = Date.parse(req.body.date);
     // const user = req.query.user;
     // const type = req.body.type;
-    const {userId, mealName, description, calories, type} = req.body;
-    let date = Date.now();
+    const {userId, mealName, description, calories, type, date,} = req.body;
+    if (!date || date === ""){
+        let date = Date.now();
+    }
     if (!userId || userId === ""){
         return res.status(400).json('Error: userId is required');
     }
 
     const newMeal = new Meal({
-        userId,
+        user: new mongoose.Types.ObjectId(userId),
         mealName,
         description,
         calories,
