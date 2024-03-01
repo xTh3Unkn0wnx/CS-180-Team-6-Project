@@ -1,10 +1,6 @@
-import { afterEach, beforeEach } from "node:test";
 import app from "../app";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-// import axios from "axios";
-import { describe, expect } from "@jest/globals";
-import { it } from "@jest/globals";
 import request from "supertest"
 import { resolve } from "path";
 
