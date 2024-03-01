@@ -20,6 +20,10 @@ jobs:
     - name: Install dependencies
       run: npm i
       working-directory: main-src
+      env:
+        MONGODB_URL: ${{ secrets.MONGODB_URL }}
     - name: Run tests
       run: npm run test --runInBand
       working-directory: main-src
+      env:
+        MONGODB_URL: ${{ secrets.MONGODB_URL }}
