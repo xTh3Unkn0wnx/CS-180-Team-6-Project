@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import {User} from "../models/user.model.js"
+import {User} from "../models/user.model"
 
 const router = express.Router();
 
@@ -35,35 +35,39 @@ router.route('/register').post((req:Request, res:Response) => {
 // Login a user
 router.route('/login').post((req: Request, res: Response) => {
     // const username = req.body.username;
-    const {email, password} = req.body;
+    const {email, username, password} = req.body;
 
-    if (!email || !password) {
-        return res.status(400).json({ error: "Email and password required" });
+    // if (!email || !password) {
+    //     return res.status(400).json({ error: "Email and password required" });
+    // }
+
+    if (username==="" && email==="") {
+        return res.status(400).json({ error: "Username or email required" });
     }
 
-    // if (!username && !email) {
-    //     return res.status(400).json({ error: "Username or email required" });
-    // }
+    if ((username==="" || email==="") && password==="" ) {
+        return res.status(400).json({ error: "Username or email required" });
+    }
 
     // Find user by username
-    // if (username){
-    //     User.findOne({ username: username })
-    // .then(user => {
-    //     if (!user) {
-    //         return res.status(400).json({ error: "User not found" });
-    //     }
+    if (username){
+        User.findOne({ username: username })
+    .then(user => {
+        if (!user) {
+            return res.status(400).json({ error: "User not found" });
+        }
 
-    //     // Check password
-    //     if (user.password === password) {
-    //         res.json({ msg: "Login successful", userId: user._id, loggedIn: true});
-    //     } else {
-    //         res.status(400).json({ msg: "Invalid credentials" });
-    //     }
-    // })
-    // .catch(err => res.status(500).json('Error: ' + err));
-    // }
-    // Find user by email
-    //else{
+        // Check password
+        if (user.password === password) {
+            res.json({ msg: "Login successful", userId: user._id, loggedIn: true});
+        } else {
+            res.status(400).json({ msg: "Invalid credentials" });
+        }
+    })
+    .catch(err => res.status(500).json('Error: ' + err));
+    }
+    //Find user by email
+    else{
         User.findOne({ email: email })
     .then(user => {
         if (!user) {
@@ -78,7 +82,7 @@ router.route('/login').post((req: Request, res: Response) => {
         }
     })
     .catch(err => res.status(500).json('Error: ' + err));
-    //}
+    }
 })
 
 export default router;

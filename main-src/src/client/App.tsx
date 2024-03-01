@@ -7,6 +7,8 @@ import { Footer } from "./components/Footer";
 import { NotFoundPage } from "./components/NotFound";
 import { LoginPage } from "./pages/loginPage";
 import { HomeScreen } from "./pages/homeScreen";
+import { AddMealEntry } from "./pages/addMealEntry";
+import { CalendarPage } from "./pages/CalendarPage";
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/home" element={<HomeScreen />} />
+        <Route path="/addMealEntry" element={<AddMealEntry />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/calendar" element={<CalendarPage />} />
       </Routes>
     </div>
   );

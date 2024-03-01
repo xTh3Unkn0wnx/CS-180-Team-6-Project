@@ -10,13 +10,20 @@ export const LoginPage = () => {
   const [userId, setUserId] = useState("");
   const navigate = useNavigate();
   const loginButton = async () => {
-    var email = (document.getElementById("usernameLogin") as HTMLInputElement)
-      .value;
-    var password = (
+    let userInput = (
+      document.getElementById("usernameLogin") as HTMLInputElement
+    ).value;
+    let password = (
       document.getElementById("passwordLogin") as HTMLInputElement
     ).value;
+
+    let isEmail = userInput.includes("@");
+    let loginData = isEmail
+      ? { email: userInput, password: password }
+      : { username: userInput, password: password };
+
     axios
-      .post("/users/login", { email, password })
+      .post("/users/login", loginData)
       .then((response) => {
         console.log(response.data);
         if (response.data.loggedIn) {

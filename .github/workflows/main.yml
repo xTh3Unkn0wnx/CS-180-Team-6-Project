@@ -10,20 +10,19 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js LTS
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 'lts/*'
     - name: Install dependencies
       run: npm i
       working-directory: main-src
+      env:
+        MONGODB_URL: ${{ secrets.MONGODB_URL }}
     - name: Run tests
-      run: npm run test -- --runInBand
+      run: npm run test --runInBand
       working-directory: main-src
+      env:
+        MONGODB_URL: ${{ secrets.MONGODB_URL }}
