@@ -48,7 +48,6 @@ function Signup() {
         <div className="buttonContainer"> 
           <button type="button" className="submitButton"> Create Account </button>
         </div> 
-
       </div>
   );
 }

@@ -11,7 +11,7 @@ import Aboutus from "./aboutUs";
 const App = () => {
 
   return (
-      <div className="login">
+      <div className="">
         <Routes> 
           <Route path="/" element={<Login />} /> 
           <Route path="/signup" element={<Signup />} />

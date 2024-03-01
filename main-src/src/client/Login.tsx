@@ -28,6 +28,7 @@ export const Login = () => {
           setIsLoggedIn(true);
           setUserId(response.data.userId);
           sessionStorage.setItem("userId", response.data.userId);
+          alert("Successful Login. Redirecting to home...")
           navigate("/home");
         } else {
           alert(response.data.msg);
@@ -71,6 +72,7 @@ export const Login = () => {
             <div className="buttonContainer"> 
               <button type="button" className="loginButton" onClick={handleLogin}> Login </button>
             </div> 
+
         </div>
   )
 }
