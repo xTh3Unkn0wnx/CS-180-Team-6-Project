@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import {Meal} from "../models/meal.model.js"
+import {Meal} from "../models/meal.model"
 import mongoose from 'mongoose';
 
 const router = express.Router();
@@ -7,7 +7,7 @@ const router = express.Router();
 router.route('/').get((req:Request, res:Response) => {
     const userId = req.query.userId;
     if (!userId){
-        res.status(400).json('Error: userId is required');
+        return res.status(400).json('Error: userId is required');
     }
     Meal.find({user: userId})
     .then(meals => res.json(meals))

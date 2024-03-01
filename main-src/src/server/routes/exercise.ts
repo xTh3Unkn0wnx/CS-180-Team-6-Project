@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import {Exercise} from "../models/exercise.model.js";
+import {Exercise} from "../models/exercise.model";
 import mongoose from 'mongoose';
 
 const router = express.Router();
@@ -7,7 +7,7 @@ const router = express.Router();
 router.route('/').get((req:Request, res:Response) => {
     const userId = req.query.userId;
     if (!userId){
-        res.status(400).json('Error: userId is required');
+        return res.status(400).json('Error: userId is required');
     }
     Exercise.find({user: userId})
     .then(exercises => res.json(exercises))
@@ -23,8 +23,7 @@ router.route('/add').post((req:Request, res:Response) => {
     const intensity = req.body.intensity;
     const muscleGroups = req.body.muscleGroups;
     if (!user || typeof user !== "string" || user === ""){
-        res.status(400).json('Error: userId is required');
-        return;
+        return res.status(400).json('Error: userId is required');
     }
 
     const newExercise = new Exercise({
