@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema({
-    user: {
+    user:{
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
@@ -18,3 +18,4 @@ const exerciseSchema = new Schema({
 })
 
 export const Exercise = mongoose.model('Excercise', exerciseSchema);
+export default Exercise;
