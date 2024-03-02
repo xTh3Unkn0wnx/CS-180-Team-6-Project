@@ -1,5 +1,5 @@
 import "./components/homeScreen.css"
-import NavBar from "./navBar";
+import {NavBar} from "./NavBar";
 
 const Home = () => {
     return (

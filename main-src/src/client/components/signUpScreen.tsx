@@ -1,7 +1,7 @@
 import "./components/signUp.css";
 import React from "react";
 import { Header } from "./Header";
-import { Main } from "./components/Main";
+import { Main } from "./Main";
 import { NotFoundPage } from "./NotFound";
 import { useState } from "react";
 

@@ -1,4 +1,4 @@
-import App from "./App"; 
+import App from "../App"; 
 import "./components/forgotPass.css"
 
 export const Forgotpass = () => { 
