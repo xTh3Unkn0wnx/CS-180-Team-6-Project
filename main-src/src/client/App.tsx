@@ -1,16 +1,20 @@
-import "./components/App.css";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./homeScreen";
 import Login from "./Login"; 
 import Signup from "./signUpScreen";
 import Forgotpass from "./forgotPassScreen";
-import Scheduleworkout from "./scheduleWorkout";
-import Contactus from "./contactUs";
-import Aboutus from "./aboutUs";
-import "./App.css";
-import { NotFoundPage } from "./pages/NotFound";
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
+import { Footer } from "./components/Footer";
+import { NotFoundPage } from "./components/NotFound";
+import { LoginPage } from "./pages/loginPage";
+import { HomeScreen } from "./pages/homeScreen";
 import { AddMealEntry } from "./pages/addMealEntry";
 import { CalendarPage } from "./pages/CalendarPage";
+/* import Scheduleworkout from "./scheduleWorkout";
+import Contactus from "./contactUs";
+import Aboutus from "./components/aboutUs";*/
 
 function App() {
 
@@ -31,5 +35,4 @@ function App() {
       </div>
   ); 
 }
-
-export default App; 
+export default App;
