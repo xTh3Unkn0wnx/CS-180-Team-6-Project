@@ -10,8 +10,8 @@ router.route('/').get((req:Request, res:Response) => {
         return res.status(400).json('Error: userId is required');
     }
     Meal.find({user: userId})
-    .then((meals: Meal[]) => res.json(meals))
-    .catch((err: Error) => res.status(400).json('Error: ' + err));
+    .then(meals => res.json(meals))
+    .catch(err => res.status(400).json('Error: ' + err));
 })
 
 router.route('/add').post((req:Request, res:Response) => {

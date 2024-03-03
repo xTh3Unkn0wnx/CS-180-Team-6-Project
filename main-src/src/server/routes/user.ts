@@ -9,8 +9,8 @@ router.route('/').get((req:Request, res:Response) => {
         return res.status(400).json({ error: "userId required" });
     }
     User.find({ _id: user })
-    .then((users: User[]) => res.json(users))
-    .catch((err: Error) => res.status(400).json('Error: ' + err));
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('Error: ' + err));
 })
 
 // Register a new user
