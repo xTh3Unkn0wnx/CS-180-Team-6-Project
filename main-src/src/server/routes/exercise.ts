@@ -10,8 +10,8 @@ router.route('/').get((req:Request, res:Response) => {
         return res.status(400).json('Error: userId is required');
     }
     Exercise.find({user: userId})
-    .then(exercises => res.json(exercises))
-    .catch(err => res.status(400).json('Error: ' + err));
+    .then((exercises: Exercise[]) => res.json(exercises))
+    .catch((err: Error) => res.status(400).json('Error: ' + err));
 })
 
 router.route('/add').post((req:Request, res:Response) => {
@@ -38,7 +38,7 @@ router.route('/add').post((req:Request, res:Response) => {
 
     newExercise.save()
     .then(() => res.json('Exercise added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
+    .catch((err: string) => res.status(400).json('Error: ' + err));
 })
 
 export default router;

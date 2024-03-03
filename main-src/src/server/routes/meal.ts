@@ -10,8 +10,8 @@ router.route('/').get((req:Request, res:Response) => {
         return res.status(400).json('Error: userId is required');
     }
     Meal.find({user: userId})
-    .then(meals => res.json(meals))
-    .catch(err => res.status(400).json('Error: ' + err));
+    .then((meals: Meal[]) => res.json(meals))
+    .catch((err: Error) => res.status(400).json('Error: ' + err));
 })
 
 router.route('/add').post((req:Request, res:Response) => {
@@ -21,7 +21,7 @@ router.route('/add').post((req:Request, res:Response) => {
     // const date = Date.parse(req.body.date);
     // const user = req.query.user;
     // const type = req.body.type;
-    const {userId, mealName, description, calories, type, date,} = req.body;
+    const {userId, mealName, description, calories, type, date, urlImage} = req.body;
     if (!date || date === ""){
         let date = Date.now();
     }
@@ -36,6 +36,7 @@ router.route('/add').post((req:Request, res:Response) => {
         calories,
         date,
         type,
+        urlImage
     })
 
     newMeal.save()

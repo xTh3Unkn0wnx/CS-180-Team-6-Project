@@ -1,4 +1,4 @@
-import "./App.css";
+import "./components/App.css";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./homeScreen";
 import Login from "./components/Login"; 
@@ -12,6 +12,7 @@ import { LoginPage } from "./pages/loginPage";
 import { HomeScreen } from "./pages/homeScreen";
 import { AddMealEntry } from "./pages/addMealEntry";
 import { CalendarPage } from "./pages/CalendarPage";
+import { ViewMealPage } from "./pages/ViewMealPage";
 /* import Scheduleworkout from "./scheduleWorkout";
 import Contactus from "./contactUs";
 import Aboutus from "./components/aboutUs";*/
@@ -31,6 +32,7 @@ function App() {
           <Route path="/addMealEntry" element={<AddMealEntry />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/viewMeal" element={<ViewMealPage/>} />
         </Routes>
       </div>
   ); 

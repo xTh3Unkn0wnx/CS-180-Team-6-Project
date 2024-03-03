@@ -11,6 +11,7 @@ export const AddMealEntry = () => {
     calories: "",
     date: "",
     type: "",
+    urlImage: "",
   });
 
   const handleInputChange = (
@@ -88,12 +89,21 @@ export const AddMealEntry = () => {
             onChange={handleInputChange}
             required
           >
-            <option value="Meal">Meal</option>
+            <option value="Meal" defaultChecked>Meal</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
             <option value="Snack">Snack</option>
           </select>
+        </label>
+        <label>
+          Image URL:
+          <input
+            type="text"
+            name="urlImage"
+            value={meal.urlImage}
+            onChange={handleInputChange}
+          />
         </label>
         <button type="submit">Submit</button>
       </form>

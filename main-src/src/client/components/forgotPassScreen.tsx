@@ -1,5 +1,5 @@
 import App from "../App"; 
-import "./components/forgotPass.css"
+import "./forgotPass.css"
 
 export const Forgotpass = () => { 
     const forgotPassCheck = async () => {
