@@ -5,6 +5,7 @@ import { AddMealEntry } from "../components/addMealEntry";
 import { MealDocument } from "../interface/MealDocument";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./ViewMealPage.css";
 
 export const ViewMealPage = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -47,6 +48,9 @@ export const ViewMealPage = () => {
         <button
           onClick={() => {
             setButtonPopup(true);
+          }}
+          style={{
+            background: "rgb(0, 0, 0, 0.8)",
           }}
         >
           Add New Meal
