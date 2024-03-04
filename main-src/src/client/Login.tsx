@@ -50,6 +50,7 @@ export const Login = () => {
   };
 
   return (
+    <body className="loginScreen">
       <div className="container">
           <div className="header"> Live Active </div>
           <div className="headerLogin"> Have an account? Login in below! </div>
@@ -72,8 +73,8 @@ export const Login = () => {
             <div className="buttonContainer"> 
               <button type="button" className="loginButton" onClick={handleLogin}> Login </button>
             </div> 
-
-        </div>
+      </div>
+    </body>
   )
 }
 

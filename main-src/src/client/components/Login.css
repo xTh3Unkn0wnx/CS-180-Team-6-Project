@@ -1,29 +1,36 @@
 *{
     margin: 0; 
-    padding: 0; 
+    height: 100%;
     box-sizing: border-box;
+    
 }
 
 body{
+    overflow: hidden;
+}
+
+body .loginScreen{
     background-image: url("../src/client/assets/loginScreenBackGround.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 100%;
 }
 
 
 .container{
-    position: relative;
+    position: center;
     display: flex; 
     flex-direction: column;
-    margin: auto; 
-    margin-top: 200px;
-    padding-bottom: 50px;
     width: 450px;
+    padding-bottom: 30px;
     backdrop-filter: blur(25px);
     border: 2px solid black; 
     border-radius: 15px;
+    height: 500px;
+    margin-left: 40%; 
+    margin-top: 200px;
 }
 
 .header{
@@ -33,7 +40,6 @@ body{
     gap: 9px;
     width: 100%; 
     margin-top: 30px;
-    color: black; 
     font-size: 48px; 
     font-weight: 700;
     margin-bottom: 20px; 
@@ -57,14 +63,14 @@ body{
 
 
 .forgotPass{
-    margin-left: 20px;
-    font-size: 20px;
+    margin-top: 20px; 
+    font-size: 25px;
 }
 
 .register{
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .buttonContainer{ 

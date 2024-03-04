@@ -1,83 +1,6 @@
-.navBar {
-    width: 100%; 
-    height: 120px; 
-    background-color: grey;
-    display: flex;
-    flex-direction: row; 
-}
 
-.navBar .leftSide{
-    flex: 50%; 
-    height: 100%; 
-    display: flex; 
-    align-items: center;
-    padding-left: 150px;
-}
 
-.navBar .leftSide img {
-    width: 70px; 
-}
-
-.navBar .rightSide {
-    flex: 50%; 
-    height: 100%;
-    display: flex; 
-    align-items: center;
-    justify-content: center;  
-}
-
-.navBar a {
-    color: white;
-    text-decoration: none;
-    margin: 20px;   
-}
-
-.navBar .rightSide button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-
-.navBar .rightSide svg {
-    font-size: 40px;
-}
-
-.navBar #open {
-    padding-left: 0px;
-}
-
-.navBar #close img {
-    display: inherit; 
-}
-
-.navbar #close img {
-    display: inherit;
-  }
-  
-.navBar #open .hiddenLinks {
-    display: inherit;
-    margin-left: 30px;
-}
-  
-.navBar #close .hiddenLinks {
-    display: none;
-}
-  
-.navBar #open a {
-    width: 70px;
-    margin: 5px;
-}
-  
-@media only screen and (max-width: 900px) {
-    .navBar .rightSide a {
-      width: 70px;
-    }
-    .navBar .leftSide {
-      padding-left: 50px;
-    }
-  }
-
+/*
 .navSearch {
     overflow: hidden; 
 }
@@ -104,4 +27,4 @@
     margin-top: 8px; 
     margin-right: 16px; 
     font-size: 17px; 
-}
+} */ 

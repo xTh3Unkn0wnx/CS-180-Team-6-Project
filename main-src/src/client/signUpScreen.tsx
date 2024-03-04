@@ -21,7 +21,8 @@ function Signup() {
     alert("Successfully Created New Account. Please login!")
   };
 
-  return (
+  return (  
+    <body className="signUp">
       <div className="signUpContainer"> 
         <div className="header"> Create Your Account </div>
 
@@ -49,6 +50,7 @@ function Signup() {
           <button type="button" className="submitButton"> Create Account </button>
         </div> 
       </div>
+    </body>
   );
 }
 

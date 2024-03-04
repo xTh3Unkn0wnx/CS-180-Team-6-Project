@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body{
-    /* background-image: url("../src/client/assets/signUpScreen.jpg"); */ 
+body .signUp{
+    background-image: url("../src/client/assets/signUpScreen.jpg"); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,6 +19,7 @@ body{
     margin: auto; 
     margin-top: 200px;
     padding-bottom: 50px;
+    height: 500px;
     width: 450px;
     backdrop-filter: blur(25px);
     border: 2px solid black; 
