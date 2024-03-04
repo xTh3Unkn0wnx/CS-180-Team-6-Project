@@ -44,4 +44,10 @@ router.route('/add').post((req:Request, res:Response) => {
     .catch(err => res.status(400).json('Error: ' + err));
 })
 
+router.route('/:id').delete((req:Request, res:Response) => { 
+    Meal.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Meal deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 export default router;
