@@ -23,7 +23,7 @@ export const ViewMeal = ({meals, deleteMeal} : {meals : MealDocument[], deleteMe
               />
               <p>{meal.type}</p>
               <p>{meal.calories}</p>
-              <button onClick={() => deleteMeal(meal._id)}>delete entry</button>
+              <button className="delete-button" onClick={() => deleteMeal(meal._id)}>delete entry</button>
             </div>
           ))}
         </div>

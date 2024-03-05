@@ -47,7 +47,7 @@ export const AddMealEntry = ({trigger, setTrigger, addMeal}: AddMealEntryProps) 
   return (trigger) ? (
     <div className="popup">
       <form className="popup-inner" onSubmit={handleSubmit}>
-        <h2>Add Meal</h2>
+        <h2 className="form-h2">Add Meal</h2>
         <label>
           Meal Name:
           <input
