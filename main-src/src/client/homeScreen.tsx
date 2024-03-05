@@ -30,20 +30,36 @@ const Home = () => {
             </div>
 
             <div className="featureContainer"> 
-                <a href="/login" className="clickableContainerViewCalendar"> 
+                <a href="/login" className="clickableContainer"> 
                     <div className="calendarBox"> 
-                        <div className="textBottom"> Schedule Workout</div>
+                        <div className="textBottomWorkout"> Schedule Workout</div>
                     </div>
                 </a>
 
-                <a href="" className="clickableContainerMealPlan"> 
+                <a href="" className="clickableContainer"> 
                     <div className="mealBox">
                         <div className="textBottomMeal"> Create Meal Plan </div>
                     </div>
                 </a>
 
-                <a href="" className="clickableContainerSearchExercises">
-                    
+                <a href="" className="clickableContainer"> 
+                    <div className="searchExerciseBox">
+                        <div className="textBottomSearchExercise"> Search Exercise </div>
+                    </div>
+                </a>
+                
+                <div className="rowSpacing">
+                    <a href="" className="clickableContainer"> 
+                        <div className="searchMealBox">
+                            <div className="textBottomSearchMeal"> Search Meals </div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="" className="clickableContainer"> 
+                        <div className="viewMealBox">
+                            <div className="textBottomViewMeal"> Search Meals </div>
+                        </div>
                 </a>
             </div>
 

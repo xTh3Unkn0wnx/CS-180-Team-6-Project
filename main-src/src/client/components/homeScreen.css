@@ -47,7 +47,6 @@ li.dropDownBtn{
     background-color: #f9f9f9;
     text-align: left;
     border: 1px aquamarine; 
-    border-radius: 10px;
 }
 
 .dropDownContent a:hover{
@@ -90,6 +89,21 @@ a{
     margin-left: 30px;
 }
 
+.featureContainer{
+    width: 655px;
+    height: 825px;
+    margin: 10px;
+    border: 2px solid aliceblue; 
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between; 
+
+}
+
 .links:hover{
     border-bottom: 2px solid pink;
 }
@@ -103,45 +117,33 @@ a{
     size: 40px; 
 }
 
-.clickableContainerViewCalendar{
-    width: 250px;
-    height: 250px;
+.clickableContainer{
+    width: 150px;
+    height: 150px;
 }
 
-.calendarBox{
-    width: 250px;
-    height: 250px;
-    background-image: url("../assets/calendarIcon.jpg");
-    background-size: contain;  
-    background-repeat: no-repeat;
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.textBottom{
+.textBottomWorkout{
     margin-top: 85%;
     font-size: 23px;
     font-family: 'Montserrat';
-}
-
-.mealBox{
-    width: 250px;
-    height: 250px;
-    background-image: url("../assets/mealIcon.jpg");
-    background-size: contain;  
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    border-radius: 30px;
-    margin-left: 15px;
 }
 
 .textBottomMeal{
     font-size: 25px;
     font-family: 'Montserrat';
     margin-top: 80%;
+}
+
+.textBottomSearchExercise{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
+}
+
+.textBottomSearchMeal{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
 }
 
 .homeScreenPic{
@@ -153,14 +155,69 @@ a{
     background-repeat: no-repeat;
 }
 
-.featureContainer{
-    width: 800px;
-    height: 825px;
-    margin: 10px;
-    border: 2px solid aliceblue; 
-    background-color: grey;
+.calendarBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/calendarIcon.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    cursor: pointer;
     display: flex;
-    flex-direction: row;
-    padding-left: 15px;
-    padding-top: 15px;
+    flex-direction: column;
+}
+
+
+.searchExerciseBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/searchExercise.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.searchMealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/searchMeal.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.mealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/mealIcon.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.viewMealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/viewMeal.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.textBottomViewMeal{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
+}
+
+.rowSpacing{
+    padding-top: 45px;
 }
