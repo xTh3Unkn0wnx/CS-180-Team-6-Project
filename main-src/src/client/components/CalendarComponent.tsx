@@ -5,7 +5,6 @@ import Calendar from "react-calendar";
 import "./CalendarComponent.css";
 import { ExerciseDocument } from "../interface/ExerciseDocument";
 import { MealDocument } from "../interface/MealDocument";
-import { log } from "console";
 
 const CalendarComponent: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -46,11 +45,12 @@ const CalendarComponent: React.FC = () => {
 
   return (
     <div>
-      {/* {<Calendar
+      <Calendar
        onClickDay={handleDateChange}
         value={selectedDate}
         className="my-custom-calendar"
-      />} */}
+        calendarType="US"
+      />
       <h2>Exercise Schedule for the Week:</h2>
       {/* <ul> */}
       <div className="date-container">
