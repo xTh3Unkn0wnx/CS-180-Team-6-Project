@@ -1,4 +1,4 @@
-import "./App.css";
+import "./components/App.css";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./homeScreen";
 import Login from "./Login"; 
@@ -12,9 +12,15 @@ import { LoginPage } from "./pages/loginPage";
 import { HomeScreen } from "./pages/homeScreen";
 import { AddMealEntry } from "./pages/addMealEntry";
 import { CalendarPage } from "./pages/CalendarPage";
-/* import Scheduleworkout from "./scheduleWorkout";
+import Scheduleworkout from "./scheduleWorkout";
 import Contactus from "./contactUs";
-import Aboutus from "./components/aboutUs";*/
+import Aboutus from "./components/aboutUs";
+import ExerciseSearch from "./pages/ExerciseSearch";
+import ExerciseDetail from "./pages/ExerciseDetail";
+import FoodSearch from "./pages/FoodSearch";
+import Cuisine from "./pages/Cuisine";
+import Searched from "./pages/Searched";
+import Recipe from "./pages/Recipe";
 
 function App() {
 
@@ -31,7 +37,13 @@ function App() {
           <Route path="/addMealEntry" element={<AddMealEntry />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
-        </Routes>
+          <Route path="/search-exercise/" element={<ExerciseSearch />} />
+          <Route path="/search-exercise/exercise/:id" element={<ExerciseDetail />} />
+          <Route path="/search-food" element={<FoodSearch />} />
+          <Route path="/search-food/cuisine/:type" element={<Cuisine />}/>
+          <Route path="/search-food/search/:search" element={<Searched />}/>
+          <Route path="/search-food/recipe/:id" element={<Recipe />}/>
+          </Routes>
       </div>
   ); 
 }

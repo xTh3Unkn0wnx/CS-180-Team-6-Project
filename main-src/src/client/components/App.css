@@ -1,3 +1,16 @@
+body {
+  font-family: 'Montserrat';
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +53,92 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.detail-image {
+  width: 629px;
+  height: 642px;
+}
+
+.exercise-card {
+  width: 400px;
+  height: 150px;
+  background: #EEEEEE;
+  border-top: 4px solid #000;
+  border-bottom-left-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 10px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.exercise-card img {
+  height: 326px;
+}
+
+
+.exercise-card:hover,
+.bodyPart-card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.search-btn:hover {
+  color: #fff !important;
+  border: 1px solid #000 !important;
+}
+
+.exercise-video {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 387px;
+  height: 381px;
+  text-decoration: none;
+}
+
+@media screen and (max-width:1200px) {
+  .detail-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .exercise-card {
+    width: 320px;
+  }
+
+  .exercise-video {
+    width: 320px;
+    height: 300px;
+  }
+
+}
+
+@media screen and (max-width:400px) {
+  .exercise-card {
+    width: 280px;
+  }
+}
+
+h4{
+  font-size: 1rem;
+  color: rgb(56,56,56);
+ }
+
+ h4{
+  font-size: 1.5rem;
+  color: rgb(56,56,56);
+  line-height: 2.5rem;
+  margin: 2rem 0rem;
+ }
+
+ a{
+  color: rgb(56,56,56);
+ }
