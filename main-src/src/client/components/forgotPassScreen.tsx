@@ -1,11 +1,12 @@
-import App from "./App"; 
-import "./components/forgotPass.css"
+import App from "../App"; 
+import "./forgotPass.css"
 
 export const Forgotpass = () => { 
     const forgotPassCheck = async () => {
     
     }
     return (
+        
         <body className="forgotPassword">
             <div className="logo"> 
                 <div> Live Active </div>

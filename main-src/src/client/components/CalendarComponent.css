@@ -1,3 +1,103 @@
+.my-custom-calendar {
+  background-color: rgba(240, 240, 240, 0.5); /* semi-transparent background */
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-custom-calendar .react-calendar__month-view__days__day {
+  font-size: 0.8em; /* Adjust as needed */
+  padding: 5px; /* Adjust as needed */
+  background-color: rgba(0, 64, 255, 0.6);
+  color: white;
+}
+
+.my-custom-calendar .react-calendar__month-view__days__day--weekend {
+  background-color: rgba(0, 64, 255, 0.95);
+}
+
+.my-custom-calendar .react-calendar__tile--now {
+  background: lightgreen;
+}
+
+.my-custom-calendar .react-calendar__tile--active {
+  background: darkgreen;
+  color: white;
+}
+
 .my-custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
   visibility: hidden;
 }
+
+/* Style the month and year */
+.my-custom-calendar .react-calendar__navigation__label__labelText {
+  font-size: 1.2em;
+  color: darkgreen;
+}
+
+/* Style the navigation buttons */
+.my-custom-calendar .react-calendar__navigation__arrow {
+  background-color: darkgreen;
+  color: white;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
+.date-container {
+  display : grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.date-card { 
+  flex-grow: 1;
+  margin: 5px;
+  height: clamp(200px, 400px, 70vh);
+  background-color: rgba(240, 248, 255, 0.5);
+}
+
+.date-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* .exercise-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 200px;
+}
+
+.exercise-div:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.meal-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 200px;
+}
+
+.meal-div:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+} */

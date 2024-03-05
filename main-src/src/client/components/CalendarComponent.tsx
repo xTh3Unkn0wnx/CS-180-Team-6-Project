@@ -53,47 +53,63 @@ const CalendarComponent: React.FC = () => {
       />} */}
       <h2>Exercise Schedule for the Week:</h2>
       {/* <ul> */}
-      {daysOfWeek.map((date) => (
-        <div key={date.getTime()}>
-          <strong>{format(date, "eeee, MMM d")}</strong> -<h3>Exercise</h3>
-          {exercises.filter(
-            (exercise) => new Date(exercise.date).getDate() === date.getDate()
-          ).length > 0 ? (
-            exercises
-              .filter(
-                (exercise) =>
-                  new Date(exercise.date).getDate() === date.getDate()
-              )
-              .map((exercise) => (
-                <div key={exercise._id}>
-                  <ul>
-                    <li>{exercise.exerciseName}</li>
-                    <li>Duration (In Minutes): {exercise.duration}</li>
-                    <li>{exercise.intensity}</li>
-                    <li>{exercise.description}</li>
-                  </ul>
-                </div>
-              ))
-          ) : (
-            <p>No exercise</p>
-          )}
-          <h3>Meals</h3>
-          {meals.filter(meal => new Date(meal.date).getDate() === date.getDate()).length > 0 ? (
-          meals.filter(meal => new Date(meal.date).getDate() === date.getDate()).map(meal => ( 
-            <div key={meal._id}>
-              <ul>
-                <li>{meal.mealName}</li>
-                <li>{meal.description}</li>
-                <li>Calories: {meal.calories}</li>
-                <li>{meal.type}</li>
-              </ul>
+      <div className="date-container">
+        {daysOfWeek.map((date) => (
+          <div className="date-card" key={date.getTime()}>
+            <div>
+              <strong>{format(date, "eeee, MMM d")}</strong>
+              <div className="exercise-div">
+                <h3>Exercise</h3>
+                {exercises.filter(
+                  (exercise) =>
+                    new Date(exercise.date).getDate() === date.getDate()
+                ).length > 0 ? (
+                  exercises
+                    .filter(
+                      (exercise) =>
+                        new Date(exercise.date).getDate() === date.getDate()
+                    )
+                    .map((exercise) => (
+                      <div key={exercise._id}>
+                        <ul>
+                          <li>{exercise.exerciseName}</li>
+                          <li>Duration (In Minutes): {exercise.duration}</li>
+                          <li>{exercise.intensity}</li>
+                          <li>{exercise.description}</li>
+                        </ul>
+                      </div>
+                    ))
+                ) : (
+                  <p>No exercise</p>
+                )}
+              </div>
+              <div className="meal-div">
+                <h3>Meals</h3>
+                {meals.filter(
+                  (meal) => new Date(meal.date).getDate() === date.getDate()
+                ).length > 0 ? (
+                  meals
+                    .filter(
+                      (meal) => new Date(meal.date).getDate() === date.getDate()
+                    )
+                    .map((meal) => (
+                      <div key={meal._id}>
+                        <ul>
+                          <li>{meal.mealName}</li>
+                          <li>{meal.description}</li>
+                          <li>Calories: {meal.calories}</li>
+                          <li>{meal.type}</li>
+                        </ul>
+                      </div>
+                    ))
+                ) : (
+                  <p>No Meals planned</p>
+                )}
+              </div>
             </div>
-          ))
-        ) : (
-          <p>No Meals planned</p>
-        )}
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
       {/* </ul> */}
     </div>
   );

@@ -1,8 +1,9 @@
 import "./components/homeScreen.css"
 import Logo from "../client/assets/liveActive.jpg"; 
-import HomePic from "../client/assets/homeScreenPic.jpg"; 
+import { Link } from "react-router-dom";
 
-const Home = () => {
+export const Home = () => {
+
     return (
         <body className="homeScreen"> 
             <div className="navBar">
@@ -13,7 +14,8 @@ const Home = () => {
 
                 <div className="rightSide">
                     <ul>
-                        <li><a href="" className="links"> Home </a></li>
+                        <li><a href="/" className="links"> Home </a></li>
+                        <li><a href="/calendar" className="links"> Calendar </a></li>
                         <li className="dropDownBtn">
                             <a href="javascript:void(0)" className="links"> Menu </a>
                             <div className="dropDownContent">
@@ -22,8 +24,8 @@ const Home = () => {
                                 <a href=""> Create Meal Plan </a>
                                 <a href=""> Search For Exercise </a>
                                 <a href=""> Search a Meal </a>
-                                <a href=""> View Meal </a>
-                                <a href=""> Add Meal </a>
+                                <Link to="/viewMeal">View Meal</Link>
+                                <a href="/addMealEntry"> Add Meal </a>
                             </div>
                         </li>
                         <li><a href="" className="links"> About Us </a></li>
@@ -34,7 +36,7 @@ const Home = () => {
 
             <div className="homeScreenContainer">
                 <div className="featureContainer"> 
-                    <a href="/login" className="clickableContainer"> 
+                    <a href="/calendar" className="clickableContainer"> 
                         <div className="calendarBox"> 
                             <div className="textBottomWorkout"> Schedule Workout</div>
                         </div>
@@ -58,13 +60,13 @@ const Home = () => {
                             </div>
                         </a>
 
-                    <a href="" className="clickableContainer"> 
+                    <a href="/viewMeal" className="clickableContainer"> 
                             <div className="viewMealBox">
                                 <div className="textBottomViewMeal"> View Meal </div>
                             </div>
                     </a>
 
-                    <a href="" className="clickableContainer"> 
+                    <a href="/addMealEntry" className="clickableContainer"> 
                             <div className="addMealBox">
                                 <div className="textBottomAddMeal"> Add Meal </div>
                             </div>
@@ -72,7 +74,7 @@ const Home = () => {
                 </div>
 
                 <div className="welcomeContainer"> 
-                    <div className="welcomeContainerText"> Welcome Back! Ready to have a good workout? Select a something to get started!</div>
+                    <div className="welcomeContainerText"><text> Welcome Back! Ready to have a good workout? Select a something to get started! </text></div>
                 </div>
                 <div className="sidePicture"></div>
             </div>

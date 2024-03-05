@@ -38,7 +38,7 @@ router.route('/add').post((req:Request, res:Response) => {
 
     newExercise.save()
     .then(() => res.json('Exercise added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
+    .catch((err: string) => res.status(400).json('Error: ' + err));
 })
 
 export default router;

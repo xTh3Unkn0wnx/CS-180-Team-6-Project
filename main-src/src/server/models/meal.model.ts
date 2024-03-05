@@ -15,6 +15,7 @@ const mealSchema = new Schema({
         default: 'Meal',
         enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Meal']
     },
+    urlImage: {type: String, required: false}
 }, {
     timestamps: true,
 })
