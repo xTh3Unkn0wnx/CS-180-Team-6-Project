@@ -10,7 +10,7 @@
   font-size: 0.8em; /* Adjust as needed */
   padding: 5px; /* Adjust as needed */
   background-color: rgba(0, 64, 255, 0.6);
-  color: white;
+
 }
 
 .my-custom-calendar .react-calendar__month-view__days__day--weekend {
@@ -23,7 +23,7 @@
 
 .my-custom-calendar .react-calendar__tile--active {
   background: darkgreen;
-  color: white;
+
 }
 
 .my-custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
@@ -64,6 +64,9 @@
   padding: 0;
 }
 
+.calendarBackGround{
+  background-color: aqua;
+}
 /* .exercise-div {
   display: flex;
   flex-direction: column;

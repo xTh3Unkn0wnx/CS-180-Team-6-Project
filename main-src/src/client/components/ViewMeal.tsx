@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { MealDocument } from "../interface/MealDocument";
 import defaultFoodIcon from "../assets/defaultFoodIcon.jpg";
 import "./ViewMeal.css";
@@ -7,8 +7,6 @@ export const Viewmeal = ({meals, deleteMeal} : {meals : MealDocument[], deleteMe
   // const [meals, setMeals] = useState<MealDocument[]>([]);
 
   return (
-    <>
-      <body>
         <div className="meal-container">
           {meals.map((meal) => (
             <div className="meal-card" key={meal._id}>
@@ -27,8 +25,6 @@ export const Viewmeal = ({meals, deleteMeal} : {meals : MealDocument[], deleteMe
             </div>
           ))}
         </div>
-      </body>
-    </>
   );
 };
 

@@ -45,12 +45,12 @@ const CalendarComponent: React.FC = () => {
   }, [selectedDate]);
 
   return (
-    <div>
-      {/* {<Calendar
+    <div className="calendarBackGround">
+      {<Calendar
        onClickDay={handleDateChange}
         value={selectedDate}
         className="my-custom-calendar"
-      />} */}
+      />}
       <h2>Exercise Schedule for the Week:</h2>
       {/* <ul> */}
       <div className="date-container">

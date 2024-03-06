@@ -1,9 +1,9 @@
-*{
+body .loginScreen{
     margin: 0; 
-    height: 100%;
     box-sizing: border-box;
-    
+    height: 100%;
 }
+
 
 body{
     overflow: hidden;

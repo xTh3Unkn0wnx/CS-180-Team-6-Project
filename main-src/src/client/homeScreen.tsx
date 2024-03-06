@@ -7,8 +7,8 @@ export const Home = () => {
     return (
         <body className="homeScreen"> 
             <div className="navBar">
-                <div className="leftSide">
-                    <li><img src={Logo}/></li>
+                <div className= "leftSide">
+                    <li></li>
                     <li><div className="logoText"> Live Active </div></li>
                 </div>
 
@@ -20,12 +20,12 @@ export const Home = () => {
                             <a href="javascript:void(0)" className="links"> Menu </a>
                             <div className="dropDownContent">
                                 <a href=""> Schedule Workout </a>
-                                <a href=""> View Calendar </a>
+                                <a href="/calendar"> View Calendar </a>
                                 <a href=""> Create Meal Plan </a>
                                 <a href=""> Search For Exercise </a>
                                 <a href=""> Search a Meal </a>
-                                <Link to="/viewMeal">View Meal</Link>
-                                <a href="/addMealEntry"> Add Meal </a>
+                                <a href="/viewmeal">View Meal</a>
+                                <a href="/addmealentry"> Add Meal </a>
                             </div>
                         </li>
                         <li><a href="" className="links"> About Us </a></li>
@@ -75,8 +75,10 @@ export const Home = () => {
 
                 <div className="welcomeContainer"> 
                     <div className="welcomeContainerText"><text> Welcome Back! Ready to have a good workout? Select a something to get started! </text></div>
+                    <div className="sidePicture">
+                        <div className="someContainer"></div>
+                    </div>
                 </div>
-                <div className="sidePicture"></div>
             </div>
         </body>
     ); 

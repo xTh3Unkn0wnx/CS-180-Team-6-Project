@@ -1,7 +1,12 @@
-*{
+body .homeScreen{
     margin: 0; 
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
+    background-image: url("../assets/workoutpic.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 ul{
@@ -57,13 +62,6 @@ li.dropDownBtn{
     display: block; 
 }
 
-body .homeScreen{
-    background-image: url("../assets/workoutpic.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
 a{
     text-decoration: none;
@@ -91,7 +89,6 @@ a{
 }
 
 .featureContainer{
-    margin: 10px; 
     width: 625px;
     height: 825px;
     border: 2px solid aliceblue; 
@@ -102,8 +99,6 @@ a{
     align-content: flex-start;
     justify-content: space-between; 
 }
-
-
 
 .links:hover{
     border-bottom: 2px solid pink;
@@ -257,35 +252,46 @@ a{
 }
 
 .homeScreenContainer{
+    width: 100%;
+    margin: 10px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
 }
+
 
 .sidePicture{
     margin-top: 10px;
-    margin-right: 300px;
-    height: 550px;
-    width: 750px;
+    height: 625px;
+    width: 830px;
     background-image: url("../assets/homeScreenPic.jpg");
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: contain; 
     border-radius: 20px;
     border: 5px solid aliceblue; 
 }
 
 .welcomeContainer{
-    margin-top: 10px;
+    padding: 10px;
+    margin-left: 10px;
     height: 200px;
     width: 1260px;
     background-color: grey;
     border-radius: 30px;
     border: 2px solid aliceblue;
+    justify-content: space-between;
     align-items: center;
 }
 
 .welcomeContainerText{
-    margin: 40px;
+    padding: 30px;
     font-size: 50px;
+    text-align: center;
+}
+
+.someContainer{
+    margin-top: 5px;
+    margin-left: 835px;
+    height: 610px;
+    width: 400px;
+    background-color: cadetblue;
+    border-radius: 5px;
 }
