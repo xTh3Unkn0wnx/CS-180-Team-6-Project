@@ -70,6 +70,23 @@ const Recipe = () => {
         )}
       </Info>
     </Wrapper>
+    <Wrapper2>
+        <h2>Add {details.title} to meal plan</h2>
+        <div>
+      <select>
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+    </select>
+    <input type="date" />
+    <Button
+            className={"addMeal"}
+          //onClick={() => }
+          >
+            Add to meal plan
+          </Button>
+          </div>
+      </Wrapper2>
     <Nav/>
     </div>
   );
@@ -124,6 +141,58 @@ const Wrapper = styled.div`
     &:first-child {
       margin-top: 2rem;
     }
+  }
+`;
+
+const Wrapper2 = styled.div`
+  padding:3rem;
+  margin: 20rem inherit 5rem;
+  margin-top:40px;
+  display: block;
+  background: #ffd9cb;
+  border-radius: 20px;
+  
+  div {
+    margin-top:20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .addMeal{
+    margin-left: 250px;
+    background: linear-gradient(to right, #f27121, #e94057);
+    color: #fff;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  select, input[type="date"] {
+    flex: 1;
+    width:90px;
+    height: 40px; /* Adjust the height as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-right: 50px; /* Add some space between select and input */
+  }
+
+  select{
+    background: linear-gradient(35deg, #494949, #313131);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  input[type="date"] {
+    background: linear-gradient(35deg, #494949, #313131);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
   }
 `;
 
