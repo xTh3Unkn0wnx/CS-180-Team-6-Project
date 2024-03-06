@@ -33,61 +33,61 @@ const Recipe = () => {
 
   return (
     <div>
-    <Nav/>
-    <Search />
-    <Category />
-    <Wrapper>
-      <div>
-        <h2>{details.title}</h2>
-        <img src={details.image} alt={details.title} />
-        <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
-      </div>
-      <Info>
-        <Button
-          className={activeTab === "ingredients" ? "active" : ""}
-          onClick={() => setActiveTab("ingredients")}
-        >
-          Ingredients
-        </Button>
-        <Button
-          className={activeTab === "instructions" ? "active" : ""}
-          onClick={() => setActiveTab("instructions")}
-        >
-          Instructions
-        </Button>
-        {activeTab === "ingredients" && (
-          <ul>
-            {details.extendedIngredients.map(({ id, original }) => (
-              <li key={id}>{original}</li>
-            ))}
-          </ul>
-        )}
+      <Nav />
+      <Search />
+      <Category />
+      <Wrapper>
+        <div>
+          <h2>{details.title}</h2>
+          <img src={details.image} alt={details.title} />
+          <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+        </div>
+        <Info>
+          <Button
+            className={activeTab === "ingredients" ? "active" : ""}
+            onClick={() => setActiveTab("ingredients")}
+          >
+            Ingredients
+          </Button>
+          <Button
+            className={activeTab === "instructions" ? "active" : ""}
+            onClick={() => setActiveTab("instructions")}
+          >
+            Instructions
+          </Button>
+          {activeTab === "ingredients" && (
+            <ul>
+              {details.extendedIngredients.map(({ id, original }) => (
+                <li key={id}>{original}</li>
+              ))}
+            </ul>
+          )}
 
-        {activeTab === "instructions" && (
-          <div>
-            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
-          </div>
-        )}
-      </Info>
-    </Wrapper>
-    <Wrapper2>
+          {activeTab === "instructions" && (
+            <div>
+              <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
+            </div>
+          )}
+        </Info>
+      </Wrapper>
+      <Wrapper2>
         <h2>Add {details.title} to meal plan</h2>
         <div>
-      <select>
-      <option value="breakfast">Breakfast</option>
-      <option value="lunch">Lunch</option>
-      <option value="dinner">Dinner</option>
-    </select>
-    <input type="date" />
-    <Button
+          <select id="mealType">
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+          </select>
+          <input type="date" id="mealDate"/>
+          <Button
             className={"addMeal"}
           //onClick={() => }
           >
             Add to meal plan
           </Button>
-          </div>
+        </div>
       </Wrapper2>
-    <Nav/>
+      <Nav />
     </div>
   );
 };
