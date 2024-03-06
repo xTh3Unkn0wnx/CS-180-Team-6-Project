@@ -15,13 +15,17 @@ export const Login = () => {
   const [userId, setUserId] = useState("");
 
   const handleLogin = async () => {
-    var email = (document.getElementById("usernameLogin") as HTMLInputElement)
+    var userInput = (document.getElementById("usernameLogin") as HTMLInputElement)
       .value;
     var password = (
       document.getElementById("passwordLogin") as HTMLInputElement
     ).value;
+
+    let isEmail = userInput.includes("@");
+    let loginData = isEmail ? { email: userInput, password } : { username: userInput, password };
+
     axios
-      .post("/users/login", { email, password })
+      .post("/users/login", loginData)
       .then((response) => {
         console.log(response.data);
         if (response.data.loggedIn) {
