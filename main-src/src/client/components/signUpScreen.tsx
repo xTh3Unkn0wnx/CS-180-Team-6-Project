@@ -32,6 +32,10 @@ function Signup() {
       alert("Passwords do not match");
       return;
     }
+    if (emailCreate.includes("@") === false){ 
+      alert("Invalid email");
+      return;
+    }
     axios.post("/users/register", { username: userCreate, password: passCreate, email: emailCreate, name: nameCreate, dateOfBirth: bdCreate })
     .then(res => {
       console.log(res);
@@ -40,7 +44,10 @@ function Signup() {
       sessionStorage.setItem("userId", res.data.userId);
       Navigate("/home");
      })
-    .catch(err => { console.log(err); });
+    .catch(err => { 
+      console.log(err);
+      alert("Username or email already exists"); 
+    });
     console.log("Creating new account...");
   };
 
