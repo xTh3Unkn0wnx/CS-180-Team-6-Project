@@ -54,4 +54,5 @@ const Form = styled.form`
     color: #fff;
   }
 `;
+
 export default Search;

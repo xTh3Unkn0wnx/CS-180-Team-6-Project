@@ -22,10 +22,11 @@ export const Home = () => {
                                 <a href=""> Schedule Workout </a>
                                 <a href="/calendar"> View Calendar </a>
                                 <a href=""> Create Meal Plan </a>
-                                <a href=""> Search For Exercise </a>
-                                <a href=""> Search a Meal </a>
+                                <a href="/exerciseDetail"> Exercise Detail </a>
+                                <a href="/exerciseSearch"> Search for Exercise </a>
                                 <a href="/viewmeal">View Meal</a>
                                 <a href="/addmealentry"> Add Meal </a>
+                                <a href="/foodSearch"> Search Food </a>
                             </div>
                         </li>
                         <li><a href="" className="links"> About Us </a></li>

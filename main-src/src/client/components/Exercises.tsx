@@ -21,7 +21,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
         window.scrollTo({ top: 580, behavior: 'smooth' });
     };
-
+    
+    
     useEffect(() => {
         const fetchExercisesData = async () => {
             let exercisesData = [];
@@ -36,7 +37,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         };
 
         fetchExercisesData();
-    }, [bodyPart]);
+    }, [bodyPart]); 
+    
 
     if (!currentExercises.length) {
         return (
