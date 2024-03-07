@@ -1,5 +1,6 @@
 import { Typography, Stack, Button } from '@mui/material';
 import styled from "styled-components";
+import axios from 'axios';
 
 import BodyPartImage from '../assets/icons/yoga.png';
 import TargetImage from '../assets/icons/yoga2.png';
@@ -22,6 +23,41 @@ const Detail = ({ exerciseDetail }) => {
             name: equipment,
         },
     ];
+
+    const handleSubmit = () => { 
+        const userId = sessionStorage.getItem("userId");
+        const exerciseName = name;
+        const reps = (document.getElementById("reps") as HTMLInputElement).value;
+        const sets = (document.getElementById("sets") as HTMLInputElement).value;
+        const exerciseDate = (document.getElementById("exerciseDate") as HTMLInputElement).value;
+        const duration = (document.getElementById("duration") as HTMLInputElement).value;
+        const intensity = (document.getElementById("intensity") as HTMLInputElement).value;
+        const muscleGroup = (document.getElementById("musclegroup") as HTMLInputElement).value;
+        const description = (document.getElementById("description") as HTMLInputElement).value;
+        console.log(reps, sets, exerciseDate);
+        if (reps === "" || sets === "" || exerciseDate === "" || duration === "" || intensity === "" || muscleGroup === "" || description === "") {
+            alert("Please fill out all fields");
+            return;
+        }
+        const data = {
+            user: userId,
+            exerciseName: exerciseName,
+            reps: reps,
+            sets: sets,
+            date: exerciseDate,
+            duration: duration,
+            intensity: intensity,
+            muscleGroups: muscleGroup,
+            description: description
+        };
+
+        axios.post('/exercises/add', data)
+            .then(
+                res => {console.log(res.data);
+                alert("Exercise added!");
+            })
+            .catch(err => console.log(err));
+    };
 
     return (
         <div>
@@ -54,13 +90,21 @@ const Detail = ({ exerciseDetail }) => {
                 <h2>Add {name} to your workout schedule</h2>
                 <div>
                     <label htmlFor="reps">Reps: </label>
-                    <input type="number" id="reps" />
+                    <input type="number" id="reps" required/>
                     <label htmlFor="sets">Sets: </label>
-                    <input type="number" id="sets" />
-                    <input type="date" id="exerciseDate" />
+                    <input type="number" id="sets" required/>
+                    <input type="date" id="exerciseDate" required/>
+                    <label htmlFor="duration">Duration (In Minutes):</label>
+                    <input type="number" id="duration" required/>
+                    <label htmlFor="intensity">Intensity:</label>
+                    <input type="number" id="intensity" defaultValue={1}/>
+                    <label htmlFor="musclegroup">Muscle Group:</label>
+                    <input type="text" id="musclegroup" defaultValue={bodyPart}/>
+                    <label htmlFor="description">Description:</label>
+                    <input type="text" id="description" defaultValue={target}/>
                     <AddButton
                         className={"addExercise"}
-                    //onClick={() => }
+                    onClick={() => handleSubmit()}
                     >
                         Add
                     </AddButton>

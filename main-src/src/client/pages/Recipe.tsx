@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import Search from "../components/Search"
-import Category from "../components/Category"
+import Search from "../components/Search";
+import Category from "../components/Category";
+import axios from "axios";
 
 const Recipe = () => {
   const [details, setDetails] = useState({});
@@ -12,10 +13,12 @@ const Recipe = () => {
 
   const fetchDetails = async () => {
     const resp = await fetch(
-      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${import.meta.env.VITE_RECIPE_KEY}`
+      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${
+        import.meta.env.VITE_RECIPE_KEY
+      }`
     );
     const data = await resp.json();
-    console.log(data)
+    console.log(data);
 
     return data;
   };
@@ -30,6 +33,33 @@ const Recipe = () => {
       isMounted = false;
     };
   }, [params.id]);
+
+  const handleSubmit = () => {
+    const userId = sessionStorage.getItem("userId");
+    const mealType = document.getElementById("mealType") as HTMLSelectElement;
+    const mealDate = document.getElementById("mealDate") as HTMLInputElement;
+    const imgUrl = details.image;
+    const mealName = details.title;
+    const calories = (document.getElementById("calories") as HTMLInputElement).value;
+    const description = details.summary;
+    const meal = {
+      userId: userId,
+      mealName: mealName,
+      description: description,
+      calories: calories,
+      date: mealDate.value,
+      type: mealType.value,
+      urlImage: imgUrl,
+    };
+    axios.post("/meals/add", meal).then((res) => { 
+      console.log(res.data);
+      alert("Meal added successfully");
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Error adding meal");
+    });
+  };
 
   return (
     <div>
@@ -73,16 +103,17 @@ const Recipe = () => {
       <Wrapper2>
         <h2>Add {details.title} to meal plan</h2>
         <div>
+          <label htmlFor="calories">Calories:</label>
+          <input type="number" id="calories" />
           <select id="mealType">
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
+            <option value="Meal">Meal</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
           </select>
           <input type="date" id="mealDate"/>
-          <Button
-            className={"addMeal"}
-          //onClick={() => }
-          >
+          <Button className={"addMeal"} onClick={() => handleSubmit()}>
             Add to meal plan
           </Button>
         </div>
@@ -145,20 +176,20 @@ const Wrapper = styled.div`
 `;
 
 const Wrapper2 = styled.div`
-  padding:3rem;
+  padding: 3rem;
   margin: 20rem inherit 5rem;
-  margin-top:40px;
+  margin-top: 40px;
   display: block;
   background: #ffd9cb;
   border-radius: 20px;
-  
+
   div {
-    margin-top:20px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
   }
 
-  .addMeal{
+  .addMeal {
     margin-left: 250px;
     background: linear-gradient(to right, #f27121, #e94057);
     color: #fff;
@@ -167,15 +198,16 @@ const Wrapper2 = styled.div`
     }
   }
 
-  select, input[type="date"] {
+  select,
+  input[type="date"] {
     flex: 1;
-    width:90px;
+    width: 90px;
     height: 40px; /* Adjust the height as needed */
     font-size: 16px; /* Adjust the font size as needed */
     margin-right: 50px; /* Add some space between select and input */
   }
 
-  select{
+  select {
     background: linear-gradient(35deg, #494949, #313131);
     color: #fff;
     border: none;
