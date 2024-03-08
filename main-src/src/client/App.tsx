@@ -5,12 +5,19 @@ import Login from "./components/Login";
 import Signup from "./signUpScreen";
 import Forgotpass from "./components/forgotPassScreen";
 import { NotFoundPage } from "./components/NotFound";
-import { Calendarpage } from "./pages/CalendarPage";
+// import { AddMealEntry } from "./pages/addMealEntry";
+import Calendarpage from "./pages/CalendarPage";
 import { ViewMealPage } from "./pages/ViewMealPage";
-import ExerciseDetail  from "./pages/ExerciseDetail"
-import ExerciseSearch from "./pages/ExerciseSearch"
+// import Scheduleworkout from "./scheduleWorkout";
+// import Contactus from "./contactUs";
+// import Aboutus from "./components/aboutUs";
+import ExerciseSearch from "./pages/ExerciseSearch";
+import ExerciseDetail from "./pages/ExerciseDetail";
 import FoodSearch from "./pages/FoodSearch";
 import ExerciseVideos from "./components/ExerciseVideos"
+import Cuisine from "./pages/Cuisine"
+import Searched from "./components/Search";
+import Recipe from "./pages/Recipe";
 
 
 function App() {
@@ -25,10 +32,13 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/calendar" element={<Calendarpage />} />
           <Route path="/viewMeal" element={<ViewMealPage/>} />
-          <Route path="/exerciseDetail" element={<ExerciseDetail /> } />
-          <Route path="/exerciseSearch" element={<ExerciseSearch />} />
-          <Route path="/foodSearch" element={<FoodSearch />} />
-        </Routes>
+          <Route path="/search-exercise/" element={<ExerciseSearch />} />
+          <Route path="/search-exercise/exercise/:id" element={<ExerciseDetail />} />
+          <Route path="/search-food" element={<FoodSearch />} />
+          <Route path="/search-food/cuisine/:type" element={<Cuisine />}/>
+          <Route path="/search-food/search/:search" element={<Searched />}/>
+          <Route path="/search-food/recipe/:id" element={<Recipe />}/>
+          </Routes>
       </div>
   ); 
 }

@@ -8,11 +8,13 @@ const exerciseSchema = new Schema({
         ref: 'User'
     },
     exerciseName: {type: String, require: true},
-    description: {type: String, required: true},
     duration: {type: Number, required: true},
+    reps: {type: Number, required: true},
+    sets: {type: Number, required: true},
     date: {type: Date, required: true},
     intensity: {type: Number, default: 1, enum: [1, 2, 3, 4, 5]},
     muscleGroups: {type: String},
+    description: {type: String},
 }, {
     timestamps: true,
 })

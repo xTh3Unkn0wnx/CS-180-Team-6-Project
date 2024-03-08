@@ -15,12 +15,6 @@ router.route('/').get((req:Request, res:Response) => {
 })
 
 router.route('/add').post((req:Request, res:Response) => {
-    // const mealName = req.body.mealName;
-    // const description = req.body.description;
-    // const calories = Number(req.body.calories);
-    // const date = Date.parse(req.body.date);
-    // const user = req.query.user;
-    // const type = req.body.type;
     const {userId, mealName, description, calories, type, date, urlImage} = req.body;
     if (!date || date === ""){
         let date = Date.now();

@@ -5,6 +5,7 @@ import { AddMealEntry } from "../components/addMealEntry";
 import { MealDocument } from "../interface/MealDocument";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../components/viewMealPage.css";
 
 export const ViewMealPage = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -41,7 +42,7 @@ export const ViewMealPage = () => {
 
   return (
     <>
-      <div>
+      <div className="viewMealPage">
         <Header title={"Live Active"} />
         <ViewMeal meals={meals} deleteMeal={deleteMeal} />
         <button

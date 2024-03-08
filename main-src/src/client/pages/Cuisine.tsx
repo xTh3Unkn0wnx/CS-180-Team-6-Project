@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
+import "../components/cuisinePage.css"
 
 const Cuisine = () => {
   const [cuisines, setCuisines] = useState([]);
@@ -29,7 +30,7 @@ const Cuisine = () => {
   }, [params.type]);
 
   return (
-    <div>
+    <div className="cuisinePage">
     <Nav/>
     <Search />
     <Category />

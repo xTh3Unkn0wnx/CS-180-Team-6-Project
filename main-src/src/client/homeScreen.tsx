@@ -14,22 +14,22 @@ export const Home = () => {
 
                 <div className="rightSide">
                     <ul>
-                        <li><a href="/" className="links"> Home </a></li>
+                        <li><a href="/home" className="links"> Home </a></li>
                         <li><a href="/calendar" className="links"> Calendar </a></li>
                         <li className="dropDownBtn">
                             <a href="javascript:void(0)" className="links"> Menu </a>
                             <div className="dropDownContent">
-                                <a href=""> Schedule Workout </a>
-                                <a href=""> Create Meal Plan </a>
-                                <a href="/exerciseDetail"> Exercise Detail </a>
-                                <a href="/exerciseSearch"> Search for Exercise </a>
+                                <a href="/calendar"> Calendar </a>
                                 <a href="/viewmeal">View Meal</a>
-                                <a href="/addmealentry"> Add Meal </a>
-                                <a href="/foodSearch"> Search Food </a>
+                                <a href="/search-exercise/"> Search for Exercise </a>
+                                <a href="/search-exercise/exercise/:id"> Exercise Detail </a>
+                                <a href="/search-food"> Search Food </a>    
+                                <a href="/search-food/cuisine/:type"> Cuisine </a>
+                                <a href="/search-food/recipe/:id"> Recipe </a>
                             </div>
                         </li>
-                        <li><a href="" className="links"> About Us </a></li>
-                        <li><a href="/" className="links"> Contact Us </a></li>
+                        <li><a href="*" className="links"> About Us </a></li>
+                        <li><a href="" className="links"> Account </a></li>
                         <li><a href="/" className="links"> Logout </a></li>
                     </ul>
                 </div>
@@ -39,31 +39,31 @@ export const Home = () => {
                 <div className="featureContainer"> 
                     <a href="/calendar" className="clickableContainer"> 
                         <div className="calendarBox"> 
-                            <div className="textBottomWorkout"> Schedule Workout</div>
+                            <div className="textBottomWorkout"> Calendar </div>
                         </div>
                     </a>
 
-                    <a href="" className="clickableContainer"> 
+                    <a href="/viewmeal" className="clickableContainer"> 
                         <div className="mealBox">
                             <div className="textBottomCreateMeal"> Create Meal Plan </div>
                         </div>
                     </a>
 
-                    <a href="/exerciseSearch" className="clickableContainer"> 
+                    <a href="/search-exercise/" className="clickableContainer"> 
                         <div className="searchExerciseBox">
                             <div className="textBottomSearchExercise"> Search Exercise </div>
                         </div>
                     </a>
 
-                        <a href="/foodSearch" className="clickableContainer"> 
+                        <a href="/search-food" className="clickableContainer"> 
                             <div className="searchMealBox">
                                 <div className="textBottomSearchMeal"> Search Food </div>
                             </div>
                         </a>
 
-                    <a href="/viewMeal" className="clickableContainer"> 
+                    <a href="/search-food/cuisine/:type" className="clickableContainer"> 
                             <div className="viewMealBox">
-                                <div className="textBottomViewMeal"> View Meal </div>
+                                <div className="textBottomViewMeal"> Cuisine </div>
                             </div>
                     </a>
 
