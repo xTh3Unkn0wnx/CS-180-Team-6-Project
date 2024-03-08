@@ -8,10 +8,14 @@ body .signUp{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 890px;
 }
 
 .signUpContainer{
-    position: relative;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -85%);
     display: flex; 
     flex-direction: column;
     margin: auto; 
@@ -72,5 +76,8 @@ body .signUp{
     height: 50px;
     width: 250px;
     font-size: 25px;
-    
+}
+
+.loginText{
+    color: aliceblue;
 }

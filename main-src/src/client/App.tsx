@@ -10,6 +10,7 @@ import { ViewMealPage } from "./pages/ViewMealPage";
 import ExerciseDetail  from "./pages/ExerciseDetail"
 import ExerciseSearch from "./pages/ExerciseSearch"
 import FoodSearch from "./pages/FoodSearch";
+import ExerciseVideos from "./components/ExerciseVideos"
 
 
 function App() {

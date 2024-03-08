@@ -9,20 +9,22 @@ body .forgotPassword{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 890px;  
 }
 
 
 .forgotPassContainer{
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex; 
     flex-direction: column;
-    margin-top: 150px;
-    margin-left: 725px;
     padding-bottom: 60px;
     height: 400px;
     width: 550px;
     backdrop-filter: blur(25px);
-    border: 2px solid ivory; 
+    border: 2px solid black;     
     border-radius: 15px;    
 }
 

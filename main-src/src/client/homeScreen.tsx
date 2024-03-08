@@ -20,7 +20,6 @@ export const Home = () => {
                             <a href="javascript:void(0)" className="links"> Menu </a>
                             <div className="dropDownContent">
                                 <a href=""> Schedule Workout </a>
-                                <a href="/calendar"> View Calendar </a>
                                 <a href=""> Create Meal Plan </a>
                                 <a href="/exerciseDetail"> Exercise Detail </a>
                                 <a href="/exerciseSearch"> Search for Exercise </a>
@@ -30,7 +29,8 @@ export const Home = () => {
                             </div>
                         </li>
                         <li><a href="" className="links"> About Us </a></li>
-                        <li><a href="" className="links"> Contact Us </a></li>
+                        <li><a href="/" className="links"> Contact Us </a></li>
+                        <li><a href="/" className="links"> Logout </a></li>
                     </ul>
                 </div>
             </div>
@@ -49,15 +49,15 @@ export const Home = () => {
                         </div>
                     </a>
 
-                    <a href="" className="clickableContainer"> 
+                    <a href="/exerciseSearch" className="clickableContainer"> 
                         <div className="searchExerciseBox">
                             <div className="textBottomSearchExercise"> Search Exercise </div>
                         </div>
                     </a>
 
-                        <a href="" className="clickableContainer"> 
+                        <a href="/foodSearch" className="clickableContainer"> 
                             <div className="searchMealBox">
-                                <div className="textBottomSearchMeal"> Search Meal </div>
+                                <div className="textBottomSearchMeal"> Search Food </div>
                             </div>
                         </a>
 

@@ -43,7 +43,7 @@ function Signup() {
         </div>
 
         <div className="goBack"> 
-          <p> Have an account? <a href="/"> Login </a></p>
+          <p> Have an account? <a className="loginText" href="/"> Login </a></p>
         </div>
 
         <div className="buttonContainer"> 
