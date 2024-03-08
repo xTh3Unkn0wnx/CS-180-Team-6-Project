@@ -18,11 +18,7 @@ router.route('/').get((req:Request, res:Response) => {
 
 // Register a new user
 router.route('/register').post((req:Request, res:Response) => {
-    const username = req.body.username;
-    const password = req.body.password;
-    const email = req.body.email;
-    let name = req.body.name;
-    let dateOfBirth = Date.parse(req.body.dateOfBirth);
+    let {username, password, email, name, dateOfBirth} = req.body;
 
     if (!username || !password || !email) {
         return res.status(400).json({ error: "Username, password and email required" });
