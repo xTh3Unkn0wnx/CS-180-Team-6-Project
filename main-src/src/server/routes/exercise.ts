@@ -25,7 +25,7 @@ router.route('/add').post((req:Request, res:Response) => {
     }
     try {
         const newExercise = new Exercise({
-            userid : new mongoose.Types.ObjectId(user),
+            user : new mongoose.Types.ObjectId(user),
             exerciseName,
             reps,
             sets,
@@ -43,6 +43,21 @@ router.route('/add').post((req:Request, res:Response) => {
         res.status(400).json('Error: ' + err);
     }
     
+})
+
+router.route('/delete/:id').delete((req:Request, res:Response) => { 
+    const exerciseId = req.query.id;
+    if (!exerciseId || typeof exerciseId !== "string" || exerciseId === ""){
+        return res.status(400).json('Error: userId is required');
+    }
+    try {
+        Exercise.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Exercise deleted.'))
+        .catch((err: string) => res.status(400).json('Error: ' + err));
+    } catch (err) {
+        res.status(400).json('Error: ' + err);
+    }
+
 })
 
 export default router;
