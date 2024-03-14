@@ -32,11 +32,25 @@ function Signup() {
       alert("Passwords do not match");
       return;
     }
+    if (passCreate.length < 8){
+      alert("Password must be at least 8 characters long");
+      return;
+    }
+    if (emailCreate.length < 3){
+      alert("Invalid email");
+      return;
+    }
+    if (userCreate.length < 3){
+      alert("Username must be at least 3 characters long");
+      return;
+    }
     if (emailCreate.includes("@") === false){ 
       alert("Invalid email");
       return;
     }
-    axios.post("/users/register", { username: userCreate, password: passCreate, email: emailCreate, name: nameCreate, dateOfBirth: bdCreate })
+    const newUser = { username: userCreate, password: passCreate, email: emailCreate, name: nameCreate, dateOfBirth: bdCreate};
+    console.log(newUser);
+    axios.post("/users/register", newUser)
     .then(res => {
       console.log(res);
       console.log(res.data);

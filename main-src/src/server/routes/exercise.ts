@@ -60,4 +60,10 @@ router.route('/delete/:id').delete((req:Request, res:Response) => {
 
 })
 
+router.route('/:id').delete((req:Request, res:Response) => { 
+    Exercise.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Exercise deleted.'))
+    .catch((err: string) => res.status(400).json('Error: ' + err));
+})
+
 export default router;
