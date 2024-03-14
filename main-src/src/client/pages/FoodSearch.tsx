@@ -5,10 +5,12 @@ import Keto from "../components/Keto"
 import PopularFood from "../components/PopularFood"
 import styled from "styled-components";
 import "../components/foodSearch.css"
+import { Box } from '@mui/material';
+
 
 const FoodSearch = () => {
   return (
-    <div className="foodSearchScreen">
+    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
     <Nav/>
     <Search />
     <Category />
@@ -22,7 +24,7 @@ const FoodSearch = () => {
         <PopularFood/>
     </motion.div>
     <Nav/>
-    </div>
+    </Box>
   )
 }
 

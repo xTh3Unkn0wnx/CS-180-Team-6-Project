@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import Search from "../components/Search"
 import Category from "../components/Category"
+import { Box } from '@mui/material';
 
 const Searched = () => {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -29,7 +30,7 @@ const Searched = () => {
   }, [parmas.search]);
   
   return (
-    <div>
+    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
     <Nav/>
     <Search />
     <Category />
@@ -44,7 +45,7 @@ const Searched = () => {
       ))}
     </Grid>
     <Nav/>
-    </div>
+    </Box>
   );
 };
 

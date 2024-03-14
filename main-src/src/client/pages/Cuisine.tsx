@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import "../components/cuisinePage.css"
+import { Box } from '@mui/material';
+
 
 const Cuisine = () => {
   const [cuisines, setCuisines] = useState([]);
@@ -30,8 +32,8 @@ const Cuisine = () => {
   }, [params.type]);
 
   return (
-    <div className="cuisinePage">
-    <Nav/>
+<Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+      <Nav/>
     <Search />
     <Category />
     <Grid
@@ -50,7 +52,7 @@ const Cuisine = () => {
       ))}
     </Grid>
     <Nav/>
-    </div>
+    </Box>
   );
 };
 

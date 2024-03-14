@@ -38,7 +38,7 @@ const Keto = () => {
                     return (
                         <SplideSlide key={recipe.id}>
                             <Card>
-                                <Link to={"/recipe/" + recipe.id}>
+                                <Link to={"/search-food/recipe/" + recipe.id}>
                                     <img src={recipe.image} alt={recipe.title} />
                                     <Gradient />
                                 </Link>

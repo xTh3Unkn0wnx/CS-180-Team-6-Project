@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import Category from "../components/Category";
 import axios from "axios";
+import { Box } from '@mui/material';
+
 
 const Recipe = () => {
   const [details, setDetails] = useState({});
@@ -62,7 +64,7 @@ const Recipe = () => {
   };
 
   return (
-    <div>
+    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
       <Nav />
       <Search />
       <Category />
@@ -119,7 +121,7 @@ const Recipe = () => {
         </div>
       </Wrapper2>
       <Nav />
-    </div>
+      </Box>
   );
 };
 

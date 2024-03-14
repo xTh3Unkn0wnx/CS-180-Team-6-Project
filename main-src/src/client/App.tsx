@@ -18,6 +18,7 @@ import ExerciseVideos from "./components/ExerciseVideos"
 import Cuisine from "./pages/Cuisine"
 import Searched from "./components/Search";
 import Recipe from "./pages/Recipe";
+import { Box } from '@mui/material';
 
 
 function App() {

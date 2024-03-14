@@ -10,7 +10,7 @@ const ExerciseSearch = () => {
     const [bodyPart, setBodyPart] = useState('all');
 
     return (
-        <Box className="exerciseSearch">
+        <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto" className="exerciseSearch">
             <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
             <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
         </Box>

@@ -3,9 +3,7 @@ body .loginScreen{
     box-sizing: border-box;
 }
 
-body{
-    overflow: hidden;
-}
+
 
 body .loginScreen{
     background-image: url("../src/client/assets/loginScreenBackGround.jpg");
@@ -14,6 +12,7 @@ body .loginScreen{
     background-size: cover;
     background-attachment: fixed;
     height: 17090px;
+    overflow: hidden;
 }
 
 
