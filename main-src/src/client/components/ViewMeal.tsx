@@ -52,7 +52,7 @@ export const Viewmeal = ({
             >
               Description:
             </span>{" "}
-            {meal.description}
+            <p dangerouslySetInnerHTML={{__html: meal.description}}></p>
           </p>
           <button
             className="delete-button"

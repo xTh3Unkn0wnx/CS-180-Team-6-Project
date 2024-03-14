@@ -72,10 +72,10 @@ const CalendarComponent: React.FC = () => {
                     .map((exercise) => (
                       <div key={exercise._id}>
                         <ul>
-                          <li>{exercise.exerciseName}</li>
+                          <li>Exercise Name: {exercise.exerciseName}</li>
                           <li>Duration (In Minutes): {exercise.duration}</li>
-                          <li>{exercise.intensity}</li>
-                          <li>{exercise.description}</li>
+                          <li>Exercise Intensity: {exercise.intensity}</li>
+                          <li dangerouslySetInnerHTML={{__html: exercise.description}}></li>
                         </ul>
                       </div>
                     ))
@@ -95,10 +95,10 @@ const CalendarComponent: React.FC = () => {
                     .map((meal) => (
                       <div key={meal._id}>
                         <ul>
-                          <li>{meal.mealName}</li>
-                          <li>{meal.description}</li>
+                          <li>Meal Name: {meal.mealName}</li>
+                          <li dangerouslySetInnerHTML={{__html: meal.description}}></li>
                           <li>Calories: {meal.calories}</li>
-                          <li>{meal.type}</li>
+                          <li>Type: {meal.type}</li>
                         </ul>
                       </div>
                     ))
