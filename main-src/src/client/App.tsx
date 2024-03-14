@@ -2,7 +2,7 @@ import "./components/App.css";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./homeScreen";
 import Login from "./components/Login"; 
-import Signup from "./signUpScreen";
+import Signup from "./components/signUpScreen";
 import Forgotpass from "./components/forgotPassScreen";
 import { NotFoundPage } from "./components/NotFound";
 // import { AddMealEntry } from "./pages/addMealEntry";
