@@ -1,16 +1,19 @@
 import App from "../App"; 
 import "./forgotPass.css"
+import { useNavigate } from "react-router-dom";  
+
 
 export const Forgotpass = () => { 
+
+    const navigate = useNavigate(); 
+
     const forgotPassCheck = async () => {
-    
+        alert("Currently Not a Working Feature. Redirecting back to Login...")
+        navigate("/");
     }
     return (
         
         <body className="forgotPassword">
-            <div className="logo"> 
-                <div> Live Active </div>
-            </div>
             <div className="forgotPassContainer">
                 <div className="header"> 
                     <div className="forgotPassHeader"> Forgot Your Password? </div>
