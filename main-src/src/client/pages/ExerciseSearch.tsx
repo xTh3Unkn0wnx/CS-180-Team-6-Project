@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import { Box } from '@mui/material';
 
-import Exercises from '../components/Exercises.tsx';
-import SearchExercises from '../components/SearchExercises.tsx';
+import "../components/exerciseDetail.css"
+import Exercises from '../components/Exercises';
+import SearchExercises from '../components/SearchExercises';
 
-const Home = () => {
+const ExerciseSearch = () => {
     const [exercises, setExercises] = useState([]);
     const [bodyPart, setBodyPart] = useState('all');
 
     return (
-        <Box>
+        <Box className="exerciseSearch">
             <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
             <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
         </Box>
     );
 };
 
-export default Home;
+export default ExerciseSearch;

@@ -3,14 +3,15 @@ import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 import { exerciseOptions, fetchData, youtubeOptions } from '../utils/fetchData';
-import Detail from '../components/Detail.tsx';
-import ExerciseVideos from '../components/ExerciseVideos.tsx';
+import Detail from '../components/Detail';
+import ExerciseVideos from '../components/ExerciseVideos';
 
 const ExerciseDetail = () => {
     const [exerciseDetail, setExerciseDetail] = useState({});
     const [exerciseVideos, setExerciseVideos] = useState([]);
     const { id } = useParams();
 
+    
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -27,6 +28,7 @@ const ExerciseDetail = () => {
 
         fetchExercisesData();
     }, [id]);
+    
 
     if (!exerciseDetail) return <div>No Data</div>;
 

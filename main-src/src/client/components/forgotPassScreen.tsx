@@ -3,17 +3,20 @@ import "./forgotPass.css"
 
 export const Forgotpass = () => { 
     const forgotPassCheck = async () => {
-
+    
     }
     return (
-        <div>
-            <div className="LiveActive"> Live Active </div>
+        
+        <body className="forgotPassword">
+            <div className="logo"> 
+                <div> Live Active </div>
+            </div>
             <div className="forgotPassContainer">
                 <div className="header"> 
                     <div className="forgotPassHeader"> Forgot Your Password? </div>
                     <div className="forgotPassText"> Enter your email below to recieve a reset password link. </div> 
-                    <div className="forgotPassEmailInput"> 
-                        <div className="emailPrompt"> Please Enter Email Below </div>
+                    <div className="emailPrompt"> Please Enter Email Below </div>
+                    <div className=""> 
                         <input type="text" className="forgotPassInput" id="forgotPassEmail" placeholder="Email" required/>
                     </div>
 
@@ -26,7 +29,7 @@ export const Forgotpass = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </body>
     ); 
 }
 

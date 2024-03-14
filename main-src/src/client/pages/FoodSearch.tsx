@@ -4,10 +4,11 @@ import Category from "../components/Category"
 import Keto from "../components/Keto"
 import PopularFood from "../components/PopularFood"
 import styled from "styled-components";
+import "../components/foodSearch.css"
 
 const FoodSearch = () => {
   return (
-    <div>
+    <div className="foodSearchScreen">
     <Nav/>
     <Search />
     <Category />
@@ -31,5 +32,6 @@ const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
+
 
 export default FoodSearch

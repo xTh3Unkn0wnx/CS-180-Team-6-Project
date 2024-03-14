@@ -7,7 +7,7 @@ interface Props {
 export const Header:FC<Props> = ({title}) => {
   return (
     <>
-      <h1>{title}</h1>
+      <h1 id="header">{title}</h1>
     </>
   )
 }
