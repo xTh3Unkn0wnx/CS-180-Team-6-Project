@@ -15,13 +15,7 @@ router.route('/').get((req:Request, res:Response) => {
 })
 
 router.route('/add').post((req:Request, res:Response) => {
-    // const mealName = req.body.mealName;
-    // const description = req.body.description;
-    // const calories = Number(req.body.calories);
-    // const date = Date.parse(req.body.date);
-    // const user = req.query.user;
-    // const type = req.body.type;
-    const {userId, mealName, description, calories, type, date,} = req.body;
+    const {userId, mealName, description, calories, type, date, urlImage} = req.body;
     if (!date || date === ""){
         let date = Date.now();
     }
@@ -36,11 +30,18 @@ router.route('/add').post((req:Request, res:Response) => {
         calories,
         date,
         type,
+        urlImage
     })
 
     newMeal.save()
     .then(() => res.json('Meal added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 })
+
+router.route('/:id').delete((req:Request, res:Response) => { 
+    Meal.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Meal deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 export default router;

@@ -1,9 +1,14 @@
 import React from "react";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
 import axios from "axios";
+import "./addMealEntry.css";
 
-export const AddMealEntry = () => {
+interface AddMealEntryProps { 
+  trigger: boolean;
+  setTrigger: (value: boolean) => void;
+  addMeal: (meal: any) => void;
+}
+
+export const AddMealEntry = ({trigger, setTrigger, addMeal}: AddMealEntryProps) => {
   const [userId, setUserId] = React.useState(sessionStorage.getItem("userId")); // get user id from local storage
   const [meal, setMeal] = React.useState({
     mealName: "",
@@ -11,6 +16,7 @@ export const AddMealEntry = () => {
     calories: "",
     date: "",
     type: "",
+    urlImage: "",
   });
 
   const handleInputChange = (
@@ -30,6 +36,7 @@ export const AddMealEntry = () => {
       .then((response) => {
         console.log(response);
         alert("Meal Added!");
+        addMeal(meal);
       })
       .catch((error) => {
         console.warn(error);
@@ -37,10 +44,10 @@ export const AddMealEntry = () => {
       });
   };
 
-  return (
-    <>
-      <Header title={"Live Active"} />
-      <form onSubmit={handleSubmit}>
+  return (trigger) ? (
+    <div className="popup">
+      <form className="popup-inner" onSubmit={handleSubmit}>
+        <h2 className="form-h2">Add Meal</h2>
         <label>
           Meal Name:
           <input
@@ -88,18 +95,27 @@ export const AddMealEntry = () => {
             onChange={handleInputChange}
             required
           >
-            <option value="Meal">Meal</option>
+            <option value="Meal" defaultChecked>Meal</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
             <option value="Snack">Snack</option>
           </select>
         </label>
+        <label>
+          Image URL:
+          <input
+            type="text"
+            name="urlImage"
+            value={meal.urlImage}
+            onChange={handleInputChange}
+          />
+        </label>
         <button type="submit">Submit</button>
+        <button onClick={() => setTrigger(false)} >Close Form</button>
       </form>
-      <Footer />
-    </>
-  );
+    </div>
+  ) : "";
 }
 
 export default AddMealEntry;

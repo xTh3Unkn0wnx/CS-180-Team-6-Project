@@ -6,5 +6,6 @@ export interface MealDocument {
     calories: number;
     date: Date;
     type: 'Breakfast' | 'Lunch' | 'Dinner' | 'Snack' | 'Meal';
+    urlImage: string;
   }
   

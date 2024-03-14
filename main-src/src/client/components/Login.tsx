@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";  
 import axios from "axios";
 import { useState } from "react";
-import "./components/Login.css"
+import "./Login.css"
 
 
 export const Login = () => { 
@@ -15,13 +15,17 @@ export const Login = () => {
   const [userId, setUserId] = useState("");
 
   const handleLogin = async () => {
-    var email = (document.getElementById("usernameLogin") as HTMLInputElement)
+    var userInput = (document.getElementById("usernameLogin") as HTMLInputElement)
       .value;
     var password = (
       document.getElementById("passwordLogin") as HTMLInputElement
     ).value;
+
+    let isEmail = userInput.includes("@");
+    let loginData = isEmail ? { email: userInput, password } : { username: userInput, password };
+
     axios
-      .post("/users/login", { email, password })
+      .post("/users/login", loginData)
       .then((response) => {
         console.log(response.data);
         if (response.data.loggedIn) {
@@ -50,6 +54,7 @@ export const Login = () => {
   };
 
   return (
+    <body className="loginScreen">
       <div className="container">
           <div className="header"> Live Active </div>
           <div className="headerLogin"> Have an account? Login in below! </div>
@@ -72,8 +77,8 @@ export const Login = () => {
             <div className="buttonContainer"> 
               <button type="button" className="loginButton" onClick={handleLogin}> Login </button>
             </div> 
-
-        </div>
+      </div>
+    </body>
   )
 }
 

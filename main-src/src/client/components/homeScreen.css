@@ -1,13 +1,300 @@
-*{
+body .homeScreen{
     margin: 0; 
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
-}
-
-body{
     background-image: url("../assets/workoutpic.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 10000px;
+    overflow: hidden;
+}
+
+ul{
+    list-style-type: none;
+    position: sticky;
+}
+
+li{
+    margin: 10px;
+    display: inline;
+    overflow: hidden;
+    float: left;
+    padding: 14px 16px; 
+}
+
+li a, .dropDownBtn{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover, .dropDownBtn:hover .dropDownBtn{
+    background-color: lightcoral;
+}
+
+li.dropDownBtn{
+    display: inline-block; 
+}
+
+.dropDownContent{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropDownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: #f9f9f9;
+    text-align: left;
+    border: 1px aquamarine; 
+}
+
+.dropDownContent a:hover{
+    background-color: salmon;
+}
+
+.dropDownBtn:hover .dropDownContent{
+    display: block; 
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.leftSide{
+    flex: 200px;
+}
+
+
+.navBar {
+    width: 100%; 
+    height: 60px; 
+    background-color: grey;
+    display: flex;
+    flex-direction: row; 
+    text-align: center;
+    border: 2px solid aliceblue; 
+}
+
+.links{
+    font-size: 30px;
+    color: white;
+    margin-left: 30px;
+}
+
+.featureContainer{
+    width: 625px;
+    height: 825px;
+    border: 2px solid aliceblue; 
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between; 
+}
+
+.links:hover{
+    border-bottom: 2px solid pink;
+}
+
+.logoText{
+    font-family: 'Montserrat'; 
+    font-size: 30px;
+}
+
+.logo{
+    size: 40px; 
+}
+
+.clickableContainer{
+    width: 150px;
+    height: 150px;
+    margin: 60px;
+    margin-left: 50px;
+    margin-right: 80px;
+    
+}
+
+.textBottomWorkout{
+    margin-top: 85%;
+    font-size: 20px;
+    font-family: 'Montserrat';
+}
+
+.textBottomCreateMeal{
+    font-size: 23px;
+    font-family: 'Montserrat';
+    margin-top: 80%;
+}
+
+.textBottomSearchExercise{
+    font-size: 23px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
+}
+
+.textBottomSearchMeal{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
+}
+
+.homeScreenPic{
+    flex: 1 1 300px; 
+    width: 800px;
+    height: 400px;
+    background-image: url("../assets/homeScreenPic.jpg");
+    background-size: fill;  
+    background-repeat: no-repeat;
+}
+
+.calendarBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/calendarIcon.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+
+.searchExerciseBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/searchExercise.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+.searchMealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/searchMeal.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+.mealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/mealIcon.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+.viewMealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/viewMeal.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid black; 
+}
+
+.textBottomViewMeal{
+    font-size: 23px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
+}
+
+.rowSpacing{
+    padding-top: 45px;
+}
+
+.addMealBox{
+    width: 175px;
+    height: 175px;
+    background-image: url("../assets/addMeal.jpg");
+    background-size: contain;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+.textBottomAddMeal{
+    font-size: 23px;
+    font-family: 'Montserrat';
+    margin-top: 85%;
+}
+
+.pictureContainer{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+}
+
+.homeScreenContainer{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+}
+
+
+.sidePicture{
+    margin-top: 10px;
+    height: 625px;
+    width: 830px;
+    background-image: url("../assets/homeScreenPic.jpg");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    border-radius: 20px;
+    border: 5px solid aliceblue; 
+}
+
+.welcomeContainer{
+    padding: 10px;
+    margin-left: 10px;
+    height: 200px;
+    width: 1260px;
+    background-color: grey;
+    border-radius: 30px;
+    border: 2px solid aliceblue;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcomeContainerText{
+    padding: 30px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.someContainer{
+    margin-top: 5px;
+    margin-left: 835px;
+    height: 610px;
+    width: 400px;
+    backdrop-filter: blur(25px);
+    border-radius: 5px;
+    border: 3px solid aliceblue;
 }

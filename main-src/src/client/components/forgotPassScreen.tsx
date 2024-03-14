@@ -1,19 +1,25 @@
-import App from "./App"; 
-import "./components/forgotPass.css"
+import App from "../App"; 
+import "./forgotPass.css"
+import { useNavigate } from "react-router-dom";  
+
 
 export const Forgotpass = () => { 
-    const forgotPassCheck = async () => {
 
+    const navigate = useNavigate(); 
+
+    const forgotPassCheck = async () => {
+        alert("Currently Not a Working Feature. Redirecting back to Login...")
+        navigate("/");
     }
     return (
-        <div>
-            <div className="LiveActive"> Live Active </div>
+        
+        <body className="forgotPassword">
             <div className="forgotPassContainer">
                 <div className="header"> 
                     <div className="forgotPassHeader"> Forgot Your Password? </div>
                     <div className="forgotPassText"> Enter your email below to recieve a reset password link. </div> 
-                    <div className="forgotPassEmailInput"> 
-                        <div className="emailPrompt"> Please Enter Email Below </div>
+                    <div className="emailPrompt"> Please Enter Email Below </div>
+                    <div className=""> 
                         <input type="text" className="forgotPassInput" id="forgotPassEmail" placeholder="Email" required/>
                     </div>
 
@@ -26,7 +32,7 @@ export const Forgotpass = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </body>
     ); 
 }
 
