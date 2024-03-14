@@ -98,9 +98,7 @@ const Detail = ({ exerciseDetail }) => {
                     <input type="number" id="duration" required/>
                     <label htmlFor="intensity">Intensity:</label>
                     <input type="number" id="intensity" defaultValue={1}/>
-                    <label htmlFor="musclegroup">Muscle Group:</label>
                     <input type="text" id="musclegroup" defaultValue={bodyPart}/>
-                    <label htmlFor="description">Description:</label>
                     <input type="text" id="description" defaultValue={target}/>
                     <AddButton
                         className={"addExercise"}

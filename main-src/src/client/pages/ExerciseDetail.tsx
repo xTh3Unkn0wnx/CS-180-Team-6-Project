@@ -33,9 +33,11 @@ const ExerciseDetail = () => {
     if (!exerciseDetail) return <div>No Data</div>;
 
     return (
-        <Box sx={{ mt: { lg: '96px', xs: '60px' }}}>
+        <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+        <div style={{ textAlign: 'left' }}>
             <Detail exerciseDetail={exerciseDetail} />
             <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
+        </div>
         </Box>
     );
 };

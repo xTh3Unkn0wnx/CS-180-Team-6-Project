@@ -65,6 +65,8 @@ const Recipe = () => {
 
   return (
     <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+      <div style={{ textAlign: 'left' }}>
+
       <Nav />
       <Search />
       <Category />
@@ -121,7 +123,8 @@ const Recipe = () => {
         </div>
       </Wrapper2>
       <Nav />
-      </Box>
+      </div>
+    </Box>
   );
 };
 
@@ -201,7 +204,7 @@ const Wrapper2 = styled.div`
   }
 
   select,
-  input[type="date"] {
+  input{
     flex: 1;
     width: 90px;
     height: 40px; /* Adjust the height as needed */
@@ -217,7 +220,7 @@ const Wrapper2 = styled.div`
     padding: 0 10px;
   }
 
-  input[type="date"] {
+  input {
     background: linear-gradient(35deg, #494949, #313131);
     color: #fff;
     border: none;
