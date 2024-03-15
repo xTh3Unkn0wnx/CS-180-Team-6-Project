@@ -94,7 +94,7 @@ const Detail = ({ exerciseDetail }) => {
                     <label htmlFor="sets">Sets: </label>
                     <input type="number" id="sets" required/>
                     <input type="date" id="exerciseDate" required/>
-                    <label htmlFor="duration">Duration (In Minutes):</label>
+                    <label htmlFor="duration">Duration :</label>
                     <input type="number" id="duration" required/>
                     <label htmlFor="intensity">Intensity:</label>
                     <input type="number" id="intensity" defaultValue={1}/>
@@ -140,7 +140,7 @@ const Wrapper2 = styled.div`
     width:90px;
     height: 40px; /* Adjust the height as needed */
     font-size: 16px; /* Adjust the font size as needed */
-    margin-right: 50px; /* Add some space between select and input */
+    margin-right: 25px; /* Add some space between select and input */
   }
 
   input{
