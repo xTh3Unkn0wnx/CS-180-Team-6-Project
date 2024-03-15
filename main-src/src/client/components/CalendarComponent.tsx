@@ -62,12 +62,12 @@ const CalendarComponent: React.FC = () => {
                 <h3>Exercise</h3>
                 {exercises.filter(
                   (exercise) =>
-                    new Date(exercise.date).getDate() === date.getDate()
+                    new Date(exercise.date).toISOString().slice(0,10) === date.toISOString().slice(0,10)
                 ).length > 0 ? (
                   exercises
                     .filter(
                       (exercise) =>
-                        new Date(exercise.date).getDate() === date.getDate()
+                      new Date(exercise.date).toISOString().slice(0,10) === date.toISOString().slice(0,10)
                     )
                     .map((exercise) => (
                       <div key={exercise._id}>
@@ -86,11 +86,11 @@ const CalendarComponent: React.FC = () => {
               <div className="meal-div">
                 <h3>Meals</h3>
                 {meals.filter(
-                  (meal) => new Date(meal.date).getDate() === date.getDate()
+                  (meal) => new Date(meal.date).toISOString().slice(0,10) === date.toISOString().slice(0,10)
                 ).length > 0 ? (
                   meals
                     .filter(
-                      (meal) => new Date(meal.date).getDate() === date.getDate()
+                      (meal) => new Date(meal.date).toISOString().slice(0,10) === date.toISOString().slice(0,10)
                     )
                     .map((meal) => (
                       <div key={meal._id}>
